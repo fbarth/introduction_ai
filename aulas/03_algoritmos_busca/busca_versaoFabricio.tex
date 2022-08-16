@@ -1,0 +1,736 @@
+\documentclass[landscape,pdftex]{jomislides}
+
+\slidesmag{5} % escala, qto maior maiores serão as letras/figras/etc.
+
+%\centerslidesfalse
+
+\usepackage{algorithmic}
+
+%
+% Slides
+% ======
+%
+
+
+\begin{document}
+
+%\input{autorHeaders}
+
+\title{Busca em Espaço de Estados} 
+\author{Fabrício Barth}
+\institution{Insper}
+\date{Março de 2022}
+
+\SlideHeader{}
+            {Agentes Autônomos e Aprendizagem por Reforço}
+\SlideFooter{\theslidepartheading $\;$ --- $\;$ \theslideheading}
+            {\theslide}
+
+\vpagecolor[white]{white}
+
+
+\subtitle{}
+
+\maketitle
+
+
+%
+%
+%   Introdução
+%
+%
+\begin{PartSlide}{\textbf{Introdução}}
+\end{PartSlide}
+
+\begin{Slide}{Agente orientado a \textbf{meta}}
+  \begin{itemize}
+  \item O projetista não determina um mapeamento entre percepções e
+    ações, mas determina que objetivo o agente deve alcançar
+
+  \item É necessário que o próprio agente construa um plano de ações
+    que atinjam seu objetivo
+
+    (como se o próprio agente construísse seu programa)
+    
+  \item Exemplos: o agente aspirador de pó, um agente motorista de
+    táxi, uma sonda espacial, ...
+  \end{itemize}
+\end{Slide}
+
+\begin{Slide}{O que é \textbf{busca}?}
+  \begin{itemize}
+  \item O mundo do agente tem um conjunto de \emph{estados} possíveis (muitas
+    vezes este conjunto é infinito)
+  \item Existem \emph{transições} entre os estados do mundo, formando um grafo.
+  \item São utilizados \emph{algoritmos} para encontrar um caminho neste grafo
+    \begin{itemize}
+    \item partindo do estado inicial (atual)
+    \item até o estado objetivo
+    \end{itemize}
+  \end{itemize}
+
+\end{Slide}
+
+\begin{Slide}{Exemplo do \textbf{aspirador de pó}}
+  \begin{itemize}
+  \item Um robô aspirador de pó deve limpar uma casa com duas
+    posições. As operações que ele sabe executar são:
+    \begin{itemize}
+    \item sugar
+    \item ir para a posição da esquerda
+    \item ir para a posição da direita
+    \end{itemize}
+  \item Como o aspirador pode montar um plano para limpar a casa se
+    inicialmente ele esta na posição direita e as duas posições têm
+    sujeira?
+    \begin{itemize}
+    \item Quais os estados possíveis do mundo do aspirador e as transições?
+    \end{itemize}
+
+  \end{itemize}
+
+  \textbf{Estados} possíveis:
+  \begin{center}
+    \includegraphics[width=.7\textwidth]{figuras/fig03-02.pdf}
+  \end{center}
+
+  \newpage
+  \textbf{Espaço de busca}
+  \begin{center}
+    \includegraphics[width=\textwidth]{figuras/fig03-06.pdf}
+  \end{center}
+\end{Slide}
+
+\begin{Slide}{Por que \textbf{estados}?}
+  \begin{itemize}
+  {\small  
+  \item As informações do mundo real são absurdamente complexas, é
+    praticamente impossível modelá-las todas
+    \begin{itemize}
+    \item No exemplo do aspirador, o mundo dele tem várias outras
+      informações: a cor do tapete, se é dia, de que material o
+      aspirador é feito, quanto ele tem de energia, como é o nome do/a
+      proprietário/a, ....
+    \end{itemize}
+
+  \item A noção de estado é utilizada para \emph{abstrair} esses detalhes e
+    considerar somente o que é relevante para a solução do problema
+
+  \item O mesmo se dá com as operações modeladas: são abstrações das
+    operações reais (ir para a posição da direita implica em várias
+    outras operações).
+  }
+  \end{itemize}
+
+\end{Slide}
+
+
+\begin{Slide}{Exemplo do \textbf{homem, o lobo, o carneiro e o cesto
+      de alface.}}
+  \begin{itemize}
+  \item Uma pessoa, um lobo, um carneiro e um cesto de alface estão à
+    beira de um rio. Dispondo de um barco no qual pode carregar apenas
+    um dos outros três, a pessoa deve transportar tudo para a outra
+    margem. Determine uma série de travessias que respeite a seguinte
+    condição: em nenhum momento devem ser deixados juntos e sozinhos o
+    lobo e o carneiro ou o carneiro e o cesto de alface.
+  \end{itemize}
+\end{Slide}
+
+\begin{Slide}{Busca como \textbf{desenvolvimento} de software}
+  \begin{itemize}
+  \item No desenvolvimento de um software para resolver um problema, o
+    projetista pode optar por várias paradigmas de modelagem do problema:
+    \begin{itemize}
+    \item O sistema é modelado por procedimentos que alteram os dados
+      de entrada
+    \item O sistema é modelado por funções 
+    \item O sistema é modelado por predicados
+    \item O sistema é modelado por objetos
+    \item ...
+    \end{itemize}
+    
+    \newpage
+
+  \item Busca é mais uma forma de modelar um problema:
+    \begin{itemize}
+    \item Definir os estados
+    \item Definir as transições
+    \item Escolher um algoritmo de busca
+    \end{itemize}
+
+
+  \end{itemize}
+\end{Slide}
+
+
+\begin{Slide}{Exercício}
+  O que {é} 
+  \begin{itemize}
+  \item estado 
+  \item transição
+  \item estado meta e
+  \item custo da solução encontrada
+  \end{itemize}
+  para os seguintes problemas
+  \begin{itemize}
+    \newpage
+  \item 8-Puzzle
+
+      \begin{center}
+        \includegraphics[width=.7\textwidth]{figuras/fig03-04.pdf}
+      \end{center}
+
+      \newpage
+
+  \item Encontrar um caminho da cidade ``i'' até  ``x''
+      \begin{center}
+        \includegraphics[width=.8\textwidth]{figuras/mapa.pdf}
+      \end{center}
+  \end{itemize}
+\end{Slide}
+
+
+%
+%
+%   Busca
+%
+%
+
+\begin{PartSlide}{Algoritmos de Busca ``\textbf{Cega}''}
+\end{PartSlide}
+
+
+\begin{Slide}{\textbf{Árvore} de busca}
+  \begin{itemize}
+  \item Coloca-se o estado inicial como nodo raiz
+  \item Cada operação sobre o estado raiz gera um novo nodo (chamado
+    de \emph{sucessor})
+  \item Repete-se este processo para os novos nodos até gerar o nodo
+    que representa o estado meta
+
+  \item \emph{Estratégia} de busca: que nodo escolher para expandir
+
+  \item Exemplo: (fazer as árvores para o exemplo do aspirador e do
+    homem no rio)
+
+  \end{itemize}
+\end{Slide}
+
+
+\begin{Slide}{\textbf{Estratégias} de busca}
+  \begin{itemize}
+  \item Busca em \emph{largura}: o nodo de \textbf{menor} profundidade mais a
+    esquerda é escolhido para gerar sucessores
+
+  \item Busca em \emph{profundidade}: o nodo de \textbf{maior} profundidade mais a
+    esquerda é escolhido para gerar sucessores
+  \end{itemize}
+\end{Slide}
+
+
+\begin{Slide}{Algoritmo de busca em \textbf{largura}}
+\begin{algorithmic} 
+\STATE \textbf{function} BL(Estado $inicial$): Nodo
+\STATE \textbf{Fila} $abertos$
+\STATE $abertos$.\textbf{add}(\textbf{new} Nodo($inicial$))
+\WHILE{$abertos$.\textbf{size}() $> 0$}
+    \STATE Nodo $n \gets abertos$.\textbf{removeFirst}()
+    \IF{$n$.\textbf{getEstado}().\textbf{éMeta()}}
+       \STATE \textbf{return} $n$
+    \ENDIF   
+    \STATE $abertos$.\textbf{append}($n$.\textbf{sucessores}())
+\ENDWHILE
+\STATE \textbf{return null}
+\end{algorithmic}
+\end{Slide}
+
+
+
+\begin{Slide}{\textbf{Critérios} de comparação entre os algoritmos}
+  \begin{itemize}
+  \item \emph{Completo}: o algoritmo encontra a solução se ela
+    existir
+  \item \emph{Ótimo}: o algoritmo encontra a solução de menor custo
+  \item \emph{Tempo}: quanto tempo o algoritmo leva para encontrar a
+    solução no pior caso
+  \item \emph{Espaço}: quanto de memória o algoritmo ocupa
+  \end{itemize}
+\end{Slide}
+
+
+
+\begin{Slide}{\textbf{Análise} do algoritmo BL}
+  \begin{itemize}
+  \item Completo: sim 
+  \item Ótimo:  sim, para problemas de custo uniforme
+  \item Tempo: explorar $O(b^d)$ nodos
+
+  \begin{itemize}
+    \item $b$ = fator de ramificação
+    \item $d$ = profundidade do estado meta
+    \item $O(b^d) = 1+b+b^2+b^3+....+b^d$
+  \end{itemize} 
+
+  \item Espaço: guardar $O(b^d)$ nodos.
+  \end{itemize}
+\end{Slide}
+
+
+\begin{Slide}{Exemplo de \textbf{complexidade}}
+  \begin{tabular}{r r l l}
+    \textbf{Prof.} & \textbf{Nodos} & \textbf{Tempo} & \textbf{Memória} \\
+    \hline
+    0  & 1 & 1ms & 100 bytes \\ 
+    2  & 111 & 0,1 seg & 11 Kbytes \\ 
+    4  & 11.111 & 11 seg & 1 Mbyte\\ 
+    6  & $10^6$ & 18 min & 111 Mbytes\\ 
+    8  & $10^8$ & 31 horas & 11 Gbytes\\ 
+    12 & $10^{12}$ & 35 anos & 111 Tbytes\\ 
+    14 & $10^{14}$ & 3500 anos & 11.111 Tbytes\\
+    \hline
+  \end{tabular}
+  
+  ($b = 10$, 1000 nodos por segundo, 100 bytes por nodo)
+
+\end{Slide}
+
+\begin{Slide}{\textbf{Nodos} da árvore}
+	\begin{itemize}
+		\item Cada nodo tem
+		\begin{itemize}
+			\item o estado que representa
+			\item o nodo pai
+			\item o operador que o gerou
+			\item sua profundidade na árvore de busca
+			\item o custo de ter sido gerado (dentado por $g$)
+			\item opcionalmente, os nodos sucessores
+		\end{itemize}
+		\item (fazer a figura)
+	\end{itemize}
+\end{Slide}
+
+
+
+\begin{Slide}{\textbf{Estratégias} de poda da árvore de busca}
+	\begin{itemize}
+		\item Um nodo não gera um sucessor igual a seu pai
+		\item Um nodo não gera um sucessor igual a um de seus ascendentes
+		\item Um nodo não gera um sucessor que já exista na árvore de busca
+		
+		
+		\newpage
+		
+		\item Detalhes de implementação:
+		\begin{itemize}
+			\item Verificar se um estado já esta na árvore pode levar muito
+			tempo
+			\begin{itemize}
+				\item imagine uma árvore com milhares de estados do jogo de
+				xadrez, cada novo estado deve ser comparado com outros
+				milhares de estados!
+			\end{itemize}
+			\item Ter uma tabela \emph{hash} (que tem tempo ótimo de
+			consulta) para saber se determinado nodo existe na árvore
+		\end{itemize}
+	\end{itemize}
+\end{Slide}
+
+
+\begin{Slide}{Algoritmo de busca em \textbf{profundidade}}
+\begin{algorithmic} 
+\STATE \textbf{function} BP(Estado $inicial$, int $m$): Nodo
+{\small
+\STATE \textbf{Pilha} $abertos$
+\STATE $abertos$.\textbf{add}(\textbf{new} Nodo($inicial$))
+\WHILE{$abertos$.\textbf{size}() $> 0$}
+    \STATE Nodo $n \gets abertos$.\textbf{removeTopo}()
+    \IF{$n$.\textbf{getEstado}().\textbf{éMeta()}}
+       \STATE \textbf{return} $n$
+    \ENDIF
+    \IF{$n$.\textbf{getProfundidade}() $< m$}
+       \STATE $abertos$.\emph{insert}($n$.\textbf{sucessores}())
+    \ENDIF
+\ENDWHILE
+\STATE \textbf{return null}
+}
+\end{algorithmic}
+\end{Slide}
+
+
+\begin{Slide}{\textbf{Análise} do algoritmo BP}
+  \begin{itemize}
+  \item Completo:  não (caso a meta esteja em profundidade maior que $m$)
+
+    Se $m = \infty$, é completo se o espaço de estados é finito e
+    existe poda para não haver loops entre as operações
+
+  \item Ótimo:  não 
+  \item Tempo: explorar $O(b^m)$ nodos 
+    (ruim se $m$ é muito maior que $d$) 
+
+  \item Espaço: guardar $O(bm)$ nodos.
+    (em profundidade 12, ocupa 12 Kbytes!)
+  \end{itemize}
+\end{Slide}
+
+
+\begin{Slide}{Algoritmo de busca em profundidade \textbf{iterativo}}
+\begin{algorithmic} 
+\STATE \textbf{function} BPI(Estado $inicial$): Nodo
+\STATE int $p \gets 1$
+\LOOP
+    \STATE Nodo $n \gets$ \emph{BP}($inicial$, $p$)
+    \IF{$n \neq$ \textbf{null}}
+       \STATE \textbf{return} $n$
+    \ENDIF   
+    \STATE $p \gets p + 1$
+\ENDLOOP
+\end{algorithmic}
+\end{Slide}
+
+
+\begin{Slide}{\textbf{Análise} do algoritmo BPI}
+  \begin{itemize}
+  \item Completo:  sim 
+  \item Ótimo:  sim, se todas as ações tem o mesmo custo
+
+  \item Tempo: explorar $O(b^d)$ nodos 
+  \item Espaço: guardar $O(bd)$ nodos.
+  \end{itemize}
+\end{Slide}
+
+
+
+%\begin{Slide}{Algoritmo de busca \textbf{Bidirecional}}
+%\begin{algorithmic} 
+%\STATE \textbf{function} BBD(Estado $inicial$, $meta$): Nodo
+%{\footnotesize
+%\STATE \textbf{List} $abertosCima$, $abertosBaixo$
+%\STATE $abertosCima$.\textbf{add}(\textbf{new} Nodo($inicial$))
+%\STATE $abertosBaixo$.\textbf{add}(\textbf{new} Nodo($meta$))
+%\WHILE{$abertosCima$.\textbf{size}() $> 0$ \textbf{or} $abertosBaixo$.\textbf{size}() $> 0$}
+%    \STATE \COMMENT{verifica lista de cima}
+%    \STATE Nodo $n \gets abertosCima$.\textbf{removeFirst}()
+%    \STATE \textbf{if} {$n$.\textbf{getEstado}() $\in abertosBaixo$}
+%    \textbf{then} \textbf{return} $meta$ \textbf{end if}
+%    \STATE $abertosCima$.\textbf{append}($n$.\textbf{sucessores}())
+%    \STATE \COMMENT{verifica lista de baixo}
+%    \STATE $n \gets abertosBaixo$.\textbf{removeFirst}()
+%    \STATE \textbf{if} {$n$.\textbf{getEstado}() $\in abertosCima$}
+%    \textbf{then} \textbf{return} $meta$  \textbf{end if}
+%    \STATE $abertosBaixo$.\textbf{append}($n$.\emph{antecessores}())
+%\ENDWHILE
+%\STATE \textbf{return null}
+%}
+%\end{algorithmic}
+%\end{Slide}
+
+
+%\begin{Slide}{\textbf{Análise} do algoritmo BBD}
+%  \begin{itemize}
+%  \item Completo: sim 
+%  \item Ótimo: sim 
+%  \item Tempo: explorar $O(b^{d/2})$ nodos 
+%  \item Espaço: guardar $O(b^{d/2})$ nodos
+%
+%  \item Observação: deve ser possível gera antecessores
+%  \end{itemize}
+%\end{Slide}
+
+\begin{Slide}{Algoritmo de busca de \textbf{custo uniforme}}
+\begin{algorithmic} 
+\STATE \textbf{function} BCU(Estado $inicial$): Nodo
+\STATE \textbf{Set} $abertos$ ordenados por custo
+\STATE $abertos$.\textbf{add}(\textbf{new} Nodo($inicial$))
+\WHILE{$abertos$.\textbf{size}() $> 0$}
+    \STATE Nodo $n \gets abertos$.\textbf{removeFirst}()
+    \IF{$n$.\textbf{getEstado}().\textbf{éMeta()}}
+       \STATE \textbf{return} $n$
+    \ENDIF   
+    \STATE $abertos$.\textbf{append}($n$.\textbf{sucessores}())
+\ENDWHILE
+\STATE \textbf{return null}
+\end{algorithmic}
+\end{Slide}
+
+\begin{Slide}{Algoritmo de busca de \textbf{custo uniforme}}
+\begin{itemize}
+\item Expande nós de acordo com o custo.
+\item Se custo = profundidade do nó então temos uma busca em largura.
+\end{itemize}
+\end{Slide}
+
+\begin{Slide}{\textbf{Resumo}}
+
+%  \begin{center}
+%    \includegraphics[width=.8\textwidth]{figuras/arvoreResumo.pdf}
+%  \end{center}
+
+  \begin{tabular}{l c c c c}
+    & \textbf{BL} & \textbf{BP} & \textbf{BPI} & \textbf{BCU} \\
+    \hline
+    \emph{Completo} & sim & não & sim & sim \\
+    \emph{Ótimo} & sim & não & sim & sim \\
+    \emph{Tempo} & $O(b^d)$ & $O(b^m)$ & $O(b^d)$ & $O(b^d)$\\ 
+    \emph{Espaço} & $O(b^d)$ & $O(bm)$ & $O(bd)$ & $O(b^d)$\\
+    \hline
+  \end{tabular}
+
+\end{Slide}
+
+
+%
+%
+%  Busca heurística
+%
+%
+\begin{PartSlide}{Algoritmos de Busca ``\textbf{Inteligente}''}
+\end{PartSlide}
+
+\begin{Slide}{\textbf{Exemplo}: ir de ``h'' para ``o'' (com BL)}
+  \begin{center}
+    \includegraphics[width=.6\textwidth]{figuras/mapa.pdf}
+  \end{center}
+  A árvore de busca gerada é ``inteligente''?
+\end{Slide}
+
+\begin{Slide}{\textbf{Heurística}}
+  \begin{itemize}
+  \item Heurística: \emph{Estimativa} de custo até a meta. (denotado
+    pela função $h : Estados \to Reais$)
+
+  \item No exemplo das cidades, poderia ser a distância em linha reta.
+
+  \item Algoritmo de \emph{busca gananciosa}: retira de abertos sempre
+    o nodo com menor estimativa de custo (menor $h$).
+
+    \begin{itemize}
+    \item Refazer a busca de um caminho entre ``h'' e ``o''. 
+
+    \item Refazer a busca de um caminho entre ``i'' e ``x''. 
+     
+
+    \item \textbf{Fazer a tabela de $h$ para os dois casos}.
+    
+    \end{itemize}
+
+\newpage
+
+    \begin{itemize}
+    \item Refazer a busca de um caminho entre ``h'' e ``o''. 
+      \textbf{ótimo}!
+
+    \item Refazer a busca de um caminho entre ``i'' e ``x''. 
+      \textbf{não} ótimo!
+
+    \end{itemize}
+  \end{itemize}
+\end{Slide}
+
+
+\begin{Slide}{Busca \textbf{A*}}
+  \begin{itemize}
+  \item \textbf{Idéia}: Evitar expandir caminhos que \textbf{já} estão
+    muito caros mas também considerar os que têm menor expectativa de
+    custo.
+
+  \item Utilizar na escolha de um nodo da lista de abertos
+    \begin{itemize}
+    \item tanto a estimativa de custo de um nodo ($h(n)$)
+    \item quanto o custo acumulado para chegar no nodo ($g(n)$)
+    \end{itemize}
+
+    $f(n) = g(n) + h(n)$
+
+  \item Refazer a busca de um caminho entre ``i'' e ``x'' utilizando
+    $f$.
+
+  \end{itemize}
+\end{Slide}
+
+\begin{Slide}{Algoritmo de busca \textbf{A*}}
+\begin{algorithmic} 
+\STATE \textbf{function} BA*(Estado $inicial$): Nodo
+\STATE \textbf{PriorityList}($f$) $abertos$ 
+\COMMENT{lista ordenada por $f$}
+\STATE $abertos$.\textbf{add}(\textbf{new} Nodo($inicial$))
+\WHILE{$abertos$.\textbf{size}() $> 0$}
+    \STATE Nodo $n \gets abertos$.\textbf{removeFirst}()
+    \IF{$n$.\textbf{getEstado}().\textbf{éMeta()}}
+       \STATE \textbf{return} $n$
+    \ENDIF   
+    \STATE $abertos$.\textbf{append}($n$.\textbf{sucessores}())
+\ENDWHILE
+\STATE \textbf{return null}
+\end{algorithmic}
+\end{Slide}
+
+
+\begin{Slide}{\textbf{Propriedades} da função $h$}
+  \begin{itemize}
+  \item Supondo que o valor de $h$, no exemplo das cidades, é dados
+    por 10 * a distância em linha reta.
+
+  \item O algoritmo A* ainda é ótimo?
+
+  \item $h(n)$: estimativa de custo de $n$ até a meta
+  \item $h^*(n)$: custo real de $n$ até a meta
+
+  \item Se $h(n) \leq h^*(n)$, então $h$ é \emph{admissível}.
+
+  \item Se $h$ é admissível, o algoritmo A* é ótimo!
+
+  \end{itemize}
+\end{Slide}
+
+
+\begin{Slide}{\textbf{Análise} do algoritmo A*}
+  \begin{itemize}
+  \item Completo: \textbf{sim} 
+  \item Ótimo: \textbf{sim} (se $h$ é admissível)
+  \item Tempo: explorar $O(b^d)$ nodos no pior caso (quando a
+    heurística é ``do contra'')
+
+  \item Espaço: guardar $O(b^d)$ nodos no pior caso.
+  \end{itemize}
+\end{Slide}
+
+
+\begin{Slide}{\textbf{Exercício}}
+  \begin{itemize}
+  \item Determine uma heurística para o problema 8-Puzzle e verifique
+    se é admissível.
+
+    \begin{center}
+      \includegraphics[width=.7\textwidth]{figuras/fig03-04.pdf}
+    \end{center}
+    \newpage
+    \begin{itemize}
+    \item $h_1$: número de peças fora do lugar
+    \item $h_2$: distância de cada peça de seu lugar
+    \item $h_3$: peças fora da formação de caracol
+%    \item $h_4 = h_1 + h_2 + h_3 + h_4$
+    \end{itemize}    
+  \end{itemize}
+\end{Slide}
+
+
+%\begin{Slide}{\textbf{Complexidade} no problema
+%    8-puzzle}
+%
+%{\small
+%  \begin{center}
+%    \begin{tabular}{r|r r r|r r r}
+%      \hline
+%          & \multicolumn{3}{c|}{número de abertos} &
+%          \multicolumn{3}{c}{fator ramificação} \\\hline
+%      $d$ & BPI    & A*($h_1$) & A*($h_2$) & BPI    & A*($h_1$) & A*($h_2$) \\\hline
+%      2   & 10     & 6         & 6     & 2.45 & 1.79 & 1.79\\
+%      4   & 112    & 13        & 12    & 2.87 & 1.48 & 1.45\\
+%      8   & 6384   & 39        & 25    & 2.80 & 1.33 & 1.24\\
+%      12  & 364404 & 227       & 73    & 2.78 & 1.42 & 1.24\\
+%      16  & --     & 1301      & 211   & --   & 1.45 & 1.25\\
+%      20  & --     & 7276      & 676   & --   & 1.47 & 1.27\\
+%      24  & --     & 39135     & 1641  & --   & 1.48 & 1.26\\
+%      \hline
+%    \end{tabular}
+%  \end{center}
+%}
+%\end{Slide}
+%
+
+
+\begin{Slide}{\textbf{Exercício}}
+
+  \begin{itemize}
+  \item Determine uma heurística para o problema das 8-raínhas e
+    verifique se é admissível.
+
+    \begin{center}
+      \includegraphics[width=.4\textwidth]{figuras/fig03-05.pdf}
+    \end{center}
+    
+\newpage
+    
+    \begin{itemize}
+    \item $h$: soma do número de ataques
+    \end{itemize}
+  \end{itemize}
+\end{Slide}
+
+
+
+\begin{Slide}{Algoritmo \textbf{Subida da Montanha-1}}
+  \textbf{Idéia}: escolher sempre um sucessor melhor
+
+(``\textit{subir sempre}'').
+ 
+\begin{algorithmic} 
+\STATE \textbf{function} BSM-1(Estado $inicial$): Estado
+\STATE Estado $atual \gets inicial$
+\LOOP
+    \STATE $prox \gets $ melhor sucessor de $atual$ (segundo $h$)
+    \IF[sem sucessor melhor]{$h(prox) \geq h(atual)$}
+       \STATE \textbf{return} $atual$
+    \ENDIF
+    \STATE $atual \gets prox$
+\ENDLOOP
+\end{algorithmic}
+\end{Slide}
+
+\begin{Slide}{\textbf{Análise} do algoritmo BSM-1}
+  \begin{itemize}
+  \item Não mantém a árvore (logo, não pode retornar o caminho que
+    usou para chegar à meta).
+
+  \item Completo:  \textbf{não} (problema de \emph{máximos locais})
+  \item Ótimo:  não se aplica
+  \item Tempo:  \textbf{?}
+  \item Espaço:  \textbf{nada}!
+  \end{itemize}
+\end{Slide}
+
+
+\begin{Slide}{Algoritmo \textbf{Subida da Montanha-2}}
+{\footnotesize
+\begin{algorithmic} 
+\STATE \textbf{function} BSM-2(Estado $inicial$): Estado
+\STATE Estado $atual \gets inicial$
+\LOOP
+    \STATE $prox \gets $ melhor sucessor de $atual$ (segundo $h$)
+    \IF[sem sucessor melhor]{$h(prox) \geq h(atual)$}
+       \IF{$atual$.\textbf{éMeta}()}
+          \STATE \textbf{return} $atual$
+       \ELSE
+          \STATE $atual \gets$ estado gerado aleatóriamente
+       \ENDIF
+    \ELSE
+       \STATE $atual \gets prox$
+    \ENDIF
+\ENDLOOP
+\end{algorithmic}
+}
+\end{Slide}
+
+
+\begin{Slide}{\textbf{Análise} do algoritmo BSM-2}
+  \begin{itemize}
+  \item Completo:  \textbf{sim} (se a geração de estados
+    aleatórios distribuir normalmente os estados gerados)
+  \item Ótimo:  não se aplica
+  \item Tempo:  \textbf{?}
+  \item Espaço:  \textbf{nada}!
+  \end{itemize}
+\end{Slide}
+
+
+\begin{Slide}{Material de \textbf{consulta}}
+  \begin{itemize}
+  \item Capítulos 3 e 4 do livro do Russell \& Norvig
+  \end{itemize}
+\end{Slide}
+
+
+\end{document}
+

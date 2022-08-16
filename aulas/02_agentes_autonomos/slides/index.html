@@ -1,0 +1,654 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Fabrício Barth">
+      
+      
+        <link rel="canonical" href="https://fbarth.github.io/introduction_ai/aulas/02_agentes_autonomos/slides/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.0">
+    
+    
+      
+        <title>Agente Autônomo - Inteligência Artificial 2022/2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/custom.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#definicao-russel-and-norvig-cap-02-do-aima" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Inteligência Artificial 2022/2" class="md-header__button md-logo" aria-label="Inteligência Artificial 2022/2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Inteligência Artificial 2022/2
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Agente Autônomo
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fbarth/introduction_ai/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Inteligência Artificial
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Inteligência Artificial 2022/2" class="md-nav__button md-logo" aria-label="Inteligência Artificial 2022/2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Inteligência Artificial 2022/2
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fbarth/introduction_ai/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Inteligência Artificial
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ementa/" class="md-nav__link">
+        Ementa
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../plano_de_aulas/" class="md-nav__link">
+        Plano de Aula
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../avaliacao/" class="md-nav__link">
+        Crtitérios para Aprovação
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Aulas
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Aulas" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Aulas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_introducao_ia/" class="md-nav__link">
+        Material sobre Introdução à Inteligência Artificial
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Agentes Autônomos
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definicao-russel-and-norvig-cap-02-do-aima" class="md-nav__link">
+    Definição: Russel and Norvig, cap. 02 do AIMA
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definicao-maes-1995" class="md-nav__link">
+    Definição Maes, 1995
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definicao-wooldridge-jennings-1995" class="md-nav__link">
+    Definição Wooldridge &amp; Jennings, 1995
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemplos" class="md-nav__link">
+    Exemplos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e-possivel-saber-a-diferenca-entre-um-agente-autonomo-e-um-sistema-convencional" class="md-nav__link">
+    É possível saber a diferença entre um agente autônomo e um sistema convencional?
+  </a>
+  
+    <nav class="md-nav" aria-label="É possível saber a diferença entre um agente autônomo e um sistema convencional?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#um-pouco-de-formalismo-segundo-silver-2021" class="md-nav__link">
+    Um pouco de formalismo segundo Silver, 2021
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#propriedades-do-ambiente" class="md-nav__link">
+    Propriedades do ambiente
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quais-sao-as-propriedades-destes-ambientes" class="md-nav__link">
+    Quais são as propriedades destes ambientes?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplos-de-propriedades-de-ambientes" class="md-nav__link">
+    Exemplos de propriedades de ambientes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#por-que-identificar-as-propriedades-de-um-ambiente-e-relevante" class="md-nav__link">
+    Por que identificar as propriedades de um ambiente é relevante?
+  </a>
+  
+    <nav class="md-nav" aria-label="Por que identificar as propriedades de um ambiente é relevante?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#referencias" class="md-nav__link">
+    Referências
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/fbarth/introduction_ai/edit/master/docs/aulas/02_agentes_autonomos/slides.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+<h2 id="definicao-russel-and-norvig-cap-02-do-aima">Definição: Russel and Norvig, cap. 02 do AIMA</h2>
+<p>:::::::::::::: {.columns}
+::: {.column width="50%"}</p>
+<p>Um agente é qualquer coisa que pode ser visualizada como percebendo o ambiente através de sensores e agindo sobre o ambiente através de atuadores.</p>
+<p>\vspace{0.5cm}</p>
+<p>\begin{center}
+\includegraphics[width=0.8\textwidth]{figuras/agent_01.png}
+\end{center}</p>
+<p>:::
+::: {.column width="50%"}</p>
+<p>\includegraphics[width=1\textwidth]{figuras/agente.png}</p>
+<p>:::
+::::::::::::::</p>
+<h2 id="definicao-maes-1995">Definição Maes, 1995</h2>
+<p>:::::::::::::: {.columns}
+::: {.column width="50%"}</p>
+<p>Agentes autônomos são <strong>sistemas computacionais</strong> que habitam algum <strong>ambiente complexo e dinâmico</strong>, percebem e agem de maneira <strong>autônoma</strong> sobre este ambiente, para realizar um conjunto de <strong>tarefas</strong> e <strong>objetivos</strong> para o qual ele foi projetado.</p>
+<p>:::
+::: {.column width="50%"}</p>
+<p>\includegraphics[width=1\textwidth]{figuras/agent_02.png}</p>
+<p>:::
+::::::::::::::</p>
+<h2 id="definicao-wooldridge-jennings-1995">Definição Wooldridge &amp; Jennings, 1995</h2>
+<p>Uma entidade de hardware ou software que possui as seguintes propriedades:</p>
+<ul>
+<li>
+<p><strong>autonomia</strong>: agentes devem operar sem a intervenção direta de pessoas ou outros agentes e devem possuir controle sobre suas próprias ações e sobre o seu estado interno;</p>
+</li>
+<li>
+<p><strong>habilidade social</strong>: agentes devem ter capacidade de interagir com outros agentes, possivelmente pessoas, através de algum tipo de linguagem ou protocolo de comunicação;</p>
+</li>
+</ul>
+<h2 id="_1"></h2>
+<ul>
+<li>
+<p><strong>reatividade</strong>: agentes devem perceber o ambiente onde estão inseridos (pode ser o mundo físico, o usuário através de uma interface gráfica, um grupo de agentes, a Internet ou todos estes objetos combinados), e;</p>
+</li>
+<li>
+<p><strong>pró-ativo</strong>: agentes não devem simplesmente agir apenas em resposta ao ambiente, eles devem ter a capacidade de tomar a iniciativa para a execução de um determinado objetivo.</p>
+</li>
+</ul>
+<h2 id="exemplos">Exemplos</h2>
+<ul>
+<li>
+<p>Jogador de jogos de tabuleiro.</p>
+</li>
+<li>
+<p>Assistentes Virtuais.</p>
+</li>
+<li>
+<p>Sistemas de Recomendação.</p>
+</li>
+<li>
+<p>Veículos Autônomos. </p>
+</li>
+<li>
+<p>Classificadores automático de conteúdo. </p>
+</li>
+</ul>
+<h1 id="e-possivel-saber-a-diferenca-entre-um-agente-autonomo-e-um-sistema-convencional">É possível saber a diferença entre um agente autônomo e um sistema convencional?</h1>
+<h2 id="um-pouco-de-formalismo-segundo-silver-2021">Um pouco de formalismo segundo Silver, 2021</h2>
+<p>:::::::::::::: {.columns}
+::: {.column width="50%"}</p>
+<p>Um <strong>agente</strong> é um sistema que recebe no tempo $t$ uma observação $O_{t}$ e gera uma saída 
+$A_{t}$. </p>
+<p>\vspace{0.2cm}</p>
+<p>Ou seja, um agente é um sistema $A_{t} = \alpha(H_{t})$ que seleciona uma ação $A_{t}$ em um tempo $t$ dado uma história $H_{t} = O_{1},A_{1}, \cdots, O_{t-1},A_{t-1},O_{t}$. </p>
+<p>\begin{eqnarray}
+O_{i} = s \nonumber \ 
+s \in S \nonumber \ 
+A_{i} = a \in A \nonumber
+\end{eqnarray}</p>
+<p>:::
+::: {.column width="50%"}</p>
+<p>\includegraphics[width=1\textwidth]{figuras/agent_02.png}</p>
+<p>:::
+::::::::::::::</p>
+<h2 id="_2"></h2>
+<p>:::::::::::::: {.columns}
+::: {.column width="50%"}</p>
+<p>Um <strong>ambiente</strong> é um sistema que recebe uma ação $A_{t}$ no tempo $t$ e responde com
+uma observação $O_{t+1}$.</p>
+<p>\vspace{0.5cm}</p>
+<p>Ou seja, um ambiente é um sistema $O_{t+1} = \varepsilon(H_{t}, A_{t}, n_{t})$</p>
+<p>\vspace{0.2cm}</p>
+<ul>
+<li>$H_{t}$ é um estado que acumula toda a história;</li>
+<li>$A_{t}$ é a última ação do agente;</li>
+<li>$n_{t}$ <em>potencialmente</em> é uma fonte de aleatoriedade. </li>
+</ul>
+<p>:::
+::: {.column width="50%"}</p>
+<p>\includegraphics[width=1\textwidth]{figuras/agent_02.png}</p>
+<p>:::
+::::::::::::::</p>
+<h2 id="propriedades-do-ambiente">Propriedades do ambiente</h2>
+<ul>
+<li>
+<p><strong>Acessível ou inacessível</strong>: quando o agente tem percepção de todo ambiente, ou pelo menos das variáveis de seu interesse.</p>
+</li>
+<li>
+<p><strong>Determinístico ou indeterminístico</strong>: se o próximo estado é completamente determinado pelo estado atual e a ação selecionada pelo agente.</p>
+</li>
+<li>
+<p><strong>Síncrono ou assíncrono</strong>: é um ambiente que não muda enquanto o agente está deliberando.</p>
+</li>
+<li>
+<p><strong>Discreto ou contínuo</strong>: um número limitado e bem definido de percepções e ações.</p>
+</li>
+<li>
+<p><strong>Single Agent ou Multi-agent</strong>: neste caso podemos ter ambientes <em>multi-agent</em> competitivos ou colaborativos. </p>
+</li>
+<li>
+<p><strong>Competitivo ou colaborativo</strong>: o agente está competindo ou colaborando com outros agentes?</p>
+</li>
+</ul>
+<h2 id="quais-sao-as-propriedades-destes-ambientes">Quais são as propriedades destes ambientes?</h2>
+<ul>
+<li>
+<p><strong>Xadrez com relógio</strong>: </p>
+</li>
+<li>
+<p><strong>Xadrez sem relógio</strong>: </p>
+</li>
+<li>
+<p><strong>Veículo autônomo</strong>: </p>
+</li>
+<li>
+<p><strong>Futebol de robôs</strong>: </p>
+</li>
+</ul>
+<h2 id="exemplos-de-propriedades-de-ambientes">Exemplos de propriedades de ambientes</h2>
+<ul>
+<li>
+<p><strong>Xadrez com relógio</strong>: acessível, determinístico, assíncrono, discreto, single agent e competitivo.</p>
+</li>
+<li>
+<p><strong>Xadrez sem relógio</strong>: acessível, determinístico, síncrono, discreto, single agent e competitivo.</p>
+</li>
+<li>
+<p><strong>Veículo autônomo</strong>: inacessível, indeterminístico, assíncrono, contínuo, multi-agent e colaborativo. </p>
+</li>
+<li>
+<p><strong>Futebol de robôs</strong>: acessível, indeterminístico, assíncrono, contínuo, multi-agent e colaborativo/competitivo. </p>
+</li>
+</ul>
+<h1 id="por-que-identificar-as-propriedades-de-um-ambiente-e-relevante">Por que identificar as propriedades de um ambiente é relevante?</h1>
+<h2 id="referencias">Referências</h2>
+<ul>
+<li>
+<p>Franklin S., Graesser A. It is an Agent, or just a program? A Taxonomy for Autonomous Agents. 1996.</p>
+</li>
+<li>
+<p>Russell, S., Norvig P. Inteligência Artificial. Segunda Edição. Cap. 02.</p>
+</li>
+<li>
+<p>SILVER, D.; SINGH S.; PRECUP D.; SUTTON R. <a href="https://doi.org/10.1016/j.artint.2021.103535">Reward is enough</a>. Artificial Intelligence. Vol 299, 2021.</p>
+</li>
+</ul>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 16, 2022</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.0.0/js-yaml.min.js"></script>
+      
+        <script src="../../../js/markdown-enhancer.js"></script>
+      
+    
+  </body>
+</html>

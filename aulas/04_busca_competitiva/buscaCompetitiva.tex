@@ -1,0 +1,284 @@
+\documentclass[landscape,pdftex]{jomislides}
+
+\slidesmag{5} % escala, qto maior maiores serão as letras/figras/etc.
+
+%\centerslidesfalse
+
+\usepackage{algorithmic}
+
+%
+% Slides
+% ======
+%
+
+
+\begin{document}
+
+%\input{autorHeaders}
+
+\title{Jogos de Tabuleiro e Busca Competitiva} 
+\author{Fabrício Barth}
+\institution{Insper}
+\date{Abril de 2022}
+
+\SlideHeader{}
+            {Disciplina de Agentes Autônomos}
+\SlideFooter{\theslidepartheading $\;$ --- $\;$ \theslideheading}
+            { \theslide}
+
+\vpagecolor[white]{white}
+
+
+\subtitle{}
+
+\maketitle
+
+\begin{Slide}{Disclaimer}
+
+  \textbf{Este não é o material mais atualizado sobre o assunto.}
+
+  \textbf{Para acessar o material mais atualizado. Por favor, acesse o site http://fbarth.net.br/Connect4-Python/}
+
+\end{Slide}
+
+\begin{Slide}{Sumário}
+  \begin{itemize}
+\item Características e Exemplos
+\item Histórico
+\item Árvore de busca
+\item Avaliação Estática
+\item Algoritmo \emph{Min Max}
+\item Poda \emph{Alpha Beta}
+\item Questões práticas
+\item AlphaGo, $\cdots$, MuZero.
+  \end{itemize}
+\end{Slide}
+
+\begin{Slide}{Características e Exemplos}
+  \begin{itemize}
+  \item São jogados por duas pessoas (agentes).
+  \item Trata-se de uma competição.
+  \item Não tem variável aleatória.
+  \end{itemize}
+\begin{figure}[htbp]
+%\lefting 
+\resizebox*{0.6\columnwidth}{0.4\textheight}
+{\includegraphics{figuras/jogoDaVelha.png}}
+\label{fig:jogoDaVelha}
+\end{figure}
+\end{Slide}
+
+
+\begin{Slide}{Histórico}
+\begin{itemize}
+\item \emph{Shannon}. \textit{Programming a Computer for Playing
+    Chess}. 1950 : O uso do algoritmo \emph{Min Max} no jogo de
+  Xadrez.
+\item \emph{Deep Blue} Wins, 1996 e 1997.
+\item \emph{AlphaGo} versus Lee Sedol, 2016.
+\item \emph{MuZero} plays Go, Chess, Shogi and Atari, 2020.
+\end{itemize}
+\end{Slide}
+
+
+\begin{Slide}{Árvore de Busca para Jogos}
+\begin{itemize}
+\item \emph{Estado inicial}: tabuleiro na posição inicial e jogador.
+\item \emph{Operadores}: movimentos permitidos.
+\item \emph{Estados Objetivo}: posições vencedoras para o meu
+  jogador no tabuleiro.
+\item \emph{Função de Utilidade}: determina um valor para cada
+  estado.
+\item \emph{Árvore de Busca}: mostra todas as possibilidade de
+  jogo.
+
+\newpage
+
+\item Não estamos procurando por um caminho. Apenas pelo próximo
+  movimento (espera-se que este movimento me leve à vitória).
+\item Meus melhores movimentos dependem dos movimentos do meu
+  adversário.
+
+\end{itemize}
+\end{Slide}
+
+
+\begin{Slide}{Árvore de Busca}
+\begin{figure}[htbp]
+\centering 
+\resizebox*{1\columnwidth}{0.8\textheight}
+{\includegraphics{figuras/arvoreBusca}}
+\label{fig:arvoreBusca}
+\end{figure}
+\end{Slide}
+
+\begin{Slide}{Árvore de Busca Parcial para o Jogo da Velha}
+\begin{figure}[htbp]
+\centering 
+\resizebox*{1\columnwidth}{0.8\textheight}
+{\includegraphics{figuras/velhaArvore.png}}
+\label{fig:velhaArvore}
+\end{figure}
+\end{Slide}
+
+\begin{Slide}{Função de Utilidade}
+\begin{figure}[htbp]
+\centering 
+\resizebox*{1\columnwidth}{0.8\textheight}
+{\includegraphics{figuras/funcaoUtilidade}}
+\label{fig:funcaoUtilidade}
+\end{figure}
+\end{Slide}
+
+\begin{Slide}{Definição da função de utilidade para o xadrez}
+\begin{eqnarray}
+material = numeroPeao \times 1 + \cdots + numeroDama \times 9 \\
+v_{1} = c_{1} \times material \\
+v_{2} = c_{2} \times mobilidade \\
+v_{3} = c_{3} \times segurancaRei \\
+v_{4} = c_{4} \times controleCentro \\
+v_{5} = \cdots \\
+Utilidade =  \sum_{i=0}^{n}{v_{i}}
+\end{eqnarray}
+
+%material = numeroPeao \times 1 + numeroCavalo \times 3 + numeroBispo
+%\times 3 + numeroTorre \times 5 + numeroDama \times 9
+
+
+\newpage
+
+\begin{itemize}
+\item Muito fraco para predizer o sucesso final do jogo!
+\end{itemize}
+\end{Slide}
+
+
+\begin{Slide}{Olhar adiante + função de utilidade (\emph{MinMax})}
+\begin{figure}[htbp]
+\centering 
+\resizebox*{1\columnwidth}{0.8\textheight}
+{\includegraphics{figuras/minMax}}
+\label{fig:minMax}
+\end{figure}
+\end{Slide}
+
+
+\begin{Slide}{\textbf{Min-Max}}
+\begin{algorithmic} 
+\STATE \emph{chamada inicial MAX-VALUE(estado,max-p)}
+\STATE \textbf{function} MAX-VALUE(Estado $estado$, int $p$)
+\IF{$p$==0}
+  \STATE return EVAL($estado$)
+\ENDIF
+\STATE $v = - \infty$
+\FOR{s $\in$ SUCESSORES($estado$)}
+  \STATE $v$ = MAX($v$,MIN-VALUE(s,$p-1$))
+\ENDFOR
+\STATE \textbf{return} $v$
+\end{algorithmic}
+
+\newpage
+
+\begin{algorithmic} 
+\STATE \textbf{function} MIN-VALUE(Estado $estado$, int $p$)
+\IF{$p$==0}
+  \STATE return EVAL($estado$)
+\ENDIF
+\STATE $v = \infty$
+\FOR{s $\in$ SUCESSORES($estado$)}
+  \STATE $v$ = MIN($v$,MAX-VALUE(s,$p-1$))
+\ENDFOR
+\STATE \textbf{return} $v$
+\end{algorithmic}
+\end{Slide}
+
+
+\begin{Slide}{Desempenho x Profundidade}
+\begin{figure}[htbp]
+\centering 
+\resizebox*{0.9\columnwidth}{0.8\textheight}
+{\includegraphics{figuras/desempenho}}
+\label{desempenho}
+\end{figure}
+\end{Slide}
+
+
+\begin{Slide}{\textit{Deep Blue} $\simeq$ Força Bruta}
+\begin{itemize}
+\item 256 processadores dedicados.
+\item Examina em torno de 30 bilhões de movimentos por minuto.
+\item A profundidade geralmente é 13. No entanto, em determinadas
+  situações, pode chegar até 30.
+\end{itemize}
+\end{Slide}
+
+
+\begin{Slide}{\textbf{Min-Max $\alpha - \beta$}}
+\begin{algorithmic} 
+\STATE \emph{chamada MAX-VALUE(estado,$- \infty$,$\infty$,max-p)}
+\STATE \textbf{function} MAX-VALUE(Estado $estado$, $\alpha$, $\beta$, int $p$)
+\IF{$p$==0}
+  \STATE return EVAL($estado$)
+\ENDIF
+\FOR{s $\in$ SUCESSORES($estado$)}
+  \STATE $\alpha$ = MAX($\alpha$,MIN-VALUE(s,$\alpha$,$\beta$,$p-1$))
+  \IF{$\alpha \geq \beta$} 
+    \STATE \textbf{return $\alpha$} //cutoff
+  \ENDIF
+\ENDFOR
+\STATE \textbf{return} $\alpha$
+\end{algorithmic}
+
+\newpage
+
+\begin{algorithmic} 
+\STATE \textbf{function} MIN-VALUE(Estado $estado$,$\alpha$,$\beta$,int $p$)
+\IF{$p$==0}
+  \STATE return EVAL($estado$)
+\ENDIF
+\FOR{s $\in$ SUCESSORES($estado$)}
+  \STATE $\beta$ = MIN($\beta$,MAX-VALUE(s,$\alpha$,$\beta$,$p-1$))
+  \IF{$\beta \leq \alpha$} 
+    \STATE \textbf{return $\beta$} //cutoff
+  \ENDIF
+\ENDFOR
+\STATE \textbf{return} $\beta$
+\end{algorithmic}
+\end{Slide}
+
+
+\begin{Slide}{Exemplo $\alpha - \beta$}
+\begin{figure}[htbp]
+\centering 
+\resizebox*{1\columnwidth}{0.8\textheight}
+{\includegraphics{figuras/alphaBeta}}
+\label{fig:exemplo}
+\end{figure}
+\end{Slide}
+
+\begin{Slide}{AlphaGo, MuZero}
+	
+	\href{https://deepmind.com/blog/article/muzero-mastering-go-chess-shogi-and-atari-without-rules}{Artigos da Deepmind}
+	
+	\begin{figure}[htbp]
+		\centering 
+		\resizebox*{0.8\columnwidth}{1\textheight}
+		{\includegraphics{figuras/muzero.png}}
+		\label{fig:muzero}
+	\end{figure}
+\end{Slide}
+
+
+\begin{Slide}{Material de \textbf{consulta}}
+  \begin{itemize}
+  \item Capítulo 6 do livro do Russell \& Norvig.
+  \item http://en.wikipedia.org/wiki/Minimax.
+  \item https://deepmind.com/blog/article/muzero-mastering-go-chess-shogi-and-atari-without-rules
+  %\item MIT Open Course. 6.034 Artificial Intelligence.
+  %\item Game Theory - Stanford. www.game-theory-class.org
+  \end{itemize}
+\end{Slide}
+
+
+\end{document}
+
