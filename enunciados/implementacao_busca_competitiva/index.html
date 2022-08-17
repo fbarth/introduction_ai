@@ -1,0 +1,684 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://fbarth.github.io/introduction_ai/enunciados/implementacao_busca_competitiva/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.0">
+    
+    
+      
+        <title>Desenvolvendo um agente para atuar em ambiente multi-agente e competitivo - Inteligência Artificial 2022/2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#desenvolvendo-um-agente-para-atuar-em-ambiente-multi-agente-e-competitivo" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Inteligência Artificial 2022/2" class="md-header__button md-logo" aria-label="Inteligência Artificial 2022/2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Inteligência Artificial 2022/2
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Desenvolvendo um agente para atuar em ambiente multi-agente e competitivo
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fbarth/introduction_ai/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Inteligência Artificial
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Inteligência Artificial 2022/2" class="md-nav__button md-logo" aria-label="Inteligência Artificial 2022/2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Inteligência Artificial 2022/2
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fbarth/introduction_ai/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Inteligência Artificial
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ementa/" class="md-nav__link">
+        Ementa
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plano_de_aulas/" class="md-nav__link">
+        Plano de Aula
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../avaliacao/" class="md-nav__link">
+        Critérios para Aprovação
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Temas
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Temas" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Temas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aulas/01_introducao_ia/" class="md-nav__link">
+        Introdução à Inteligência Artificial
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aulas/02_agentes_autonomos/" class="md-nav__link">
+        Agentes Autônomos
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Enunciados
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Enunciados" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Enunciados
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#restricoes-que-devem-ser-consideradas" class="md-nav__link">
+    Restrições que devem ser consideradas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias" class="md-nav__link">
+    Referências
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacao-e-questoes-referentes-ao-projeto" class="md-nav__link">
+    Documentação e questões referentes ao projeto
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentação e questões referentes ao projeto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rubrica-da-avaliacao" class="md-nav__link">
+    Rubrica da avaliação
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#competicao" class="md-nav__link">
+    Competição
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-por-experimentar-abordagens-diferentes" class="md-nav__link">
+    Bônus por experimentar abordagens diferentes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nota-final-do-projeto" class="md-nav__link">
+    Nota final do projeto
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/fbarth/introduction_ai/edit/master/docs/enunciados/implementacao_busca_competitiva.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+<h1 id="desenvolvendo-um-agente-para-atuar-em-ambiente-multi-agente-e-competitivo">Desenvolvendo um agente para atuar em ambiente multi-agente e competitivo</h1>
+<p>O escopo desta implementação é desenvolver um agente jogador de uma variante de Liga4 chamada <em>Connect4 PopOut</em>. O tabuleiro desta variante tem as mesmas dimensões que o Liga4 convencional, as peças continuam sendo as mesmas e o objetivo também. No entanto, durante cada jogada, o jogador pode ou adicionar um novo disco no topo ou remover um disco seu da base (o que chamamos de <em>pop out</em>). Ao fazer isto, todos os discos que estão na mesma coluna que o disco que foi removido irão descer uma linha, mudando a sua relação com os demais discos presentes no tabuleiro. Neste <a href="https://www.youtube.com/watch?v=Pjmysp7FzGs">vídeo</a> é possível ver uma explicação desta variante e de outras variantes do jogo. </p>
+<p>Neste projeto, cada aluno irá implementar um jogador para <em>Connect4 PopOut</em> respeitando esta <a href="../code/games/fourinrow_popout/Player.py">interface</a>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Player</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span> 
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player_code</span><span class="p">,</span> <span class="n">board</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+</code></pre></div>
+<p>O método <code>move</code> retorna dois valores que indicam se o agente deve colocar o disco no topo ou remover da base e em qual coluna isto deve ser feito. Como exemplo, podemos utilizar o código do <a href="../code/games/fourinrow_popout/RandomPlayer.py">agente aleatório</a>:</p>
+<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player_code</span><span class="p">,</span> <span class="n">board</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">13</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="n">x</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">7</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bottomDiscExist</span><span class="p">(</span><span class="n">player_code</span><span class="p">,</span> <span class="n">board</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+                <span class="k">return</span> <span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="n">p</span>
+            <span class="k">else</span><span class="p">:</span> 
+                <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</code></pre></div>
+<p>Para informar que a decisão do agente é colocar um disco no topo então deve-se retornar <code>None, X</code>. Se o movimento do agente é remover um disco da base então deve-se retornar <code>'p', X</code>. <strong>Cuidado</strong>: você só pode remover um disco da base se este disco for seu!</p>
+<h2 id="restricoes-que-devem-ser-consideradas">Restrições que devem ser consideradas</h2>
+<p>Ao implementar este agente você deve considerar algumas restrições:</p>
+<ul>
+<li>
+<p>A duração de nenhum movimento deverá ultrapassar 10 segundos. </p>
+</li>
+<li>
+<p>O seu agente não deverá fazer nenhuma jogada inválida: </p>
+<ul>
+<li>jogar um disco em uma coluna que não existe; </li>
+<li>remover um disco que não existe; </li>
+<li>remover um disco do oponente, ou; </li>
+<li>jogar um disco em uma coluna que já está completa. </li>
+</ul>
+</li>
+<li>
+<p>O seu agente <strong>não</strong> pode perder nenhuma partida para o jogador aleatório. </p>
+</li>
+</ul>
+<p>Se o seu agente realizar qualquer um destes movimentos durante a competição então ele será desclassificado da competição. </p>
+<h2 id="referencias">Referências</h2>
+<p>Para implementar o seu agente você poderá fazer uso de diversas referências, como por exemplo: </p>
+<ul>
+<li>
+<p><a href="https://archive.computerhistory.org/projects/chess/related_materials/text/2-0%20and%202-1.Programming_a_computer_for_playing_chess.shannon/2-0%20and%202-1.Programming_a_computer_for_playing_chess.shannon.062303002.pdf">artigo do Shannon</a>: neste artigo, além de discutir o uso do algoritmo min-max para Xadrez, ele também apresenta um rascunho de função de avaliação para o Xadrez. Não é uma função de avaliação para o Connect4, mas pode ajudar. </p>
+</li>
+<li>
+<p><a href="https://pdfs.semanticscholar.org/f323/3fa36a5026b42c7f331a5c98e66aad9d3e8c.pdf">Research on Different Heuristics for Minimax Algorithm Insight from Connect-4 Game</a>. Este já é um artigo bem específico para o problema do jogo Connect-4. No entanto, ele analisa funções de utilidades e heurísticas para a versão padrão do jogo. </p>
+</li>
+<li>
+<p><a href="https://content.iospress.com/articles/icga-journal/icg11-4-10">A Knowledge-Based Approach of Connect-Four</a>. O link para o texto completo está <a href="http://www.informatik.uni-trier.de/~fernau/DSL0607/Masterthesis-Viergewinnt.pdf">aqui</a></p>
+</li>
+<li>
+<p><a href="https://www.science.org/doi/10.1126/science.1144079">Checkers is solved</a>. Artigo publicado na Science sobre o tema "Teoria de Jogos". O link para o texto completo está <a href="https://www.researchgate.net/publication/231216842_Checkers_Is_Solved">aqui</a>.</p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Connect_Four">Verbete da Wikipedia sobre Connect4</a>.</p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Evaluation_function">Verbete da wikipedia sobre função de avaliação</a>.</p>
+</li>
+<li>
+<p><a href="https://stockfishchess.org/blog/2020/introducing-nnue-evaluation/">Documentação sobre a função de avaliação utilizada pelo stockfish</a>.</p>
+</li>
+<li>
+<p><a href="http://fbarth.net.br/Connect4-Python/">Material sobre como implementar um robô jogador de Connect4</a>.</p>
+</li>
+<li>
+<p><a href="./code/games/README.md">Implementações sobre Busca Competitiva neste repositório</a>.</p>
+</li>
+</ul>
+<p>Ao final do projeto, o aluno deve entregar dois artefatos: </p>
+<ul>
+<li>
+<p>código do agente jogador pronto para participar do torneio, e;</p>
+</li>
+<li>
+<p>uma documentação que explica em alto nível as principais decisões de projeto e responde algumas perguntas conceituais. </p>
+</li>
+</ul>
+<h2 id="documentacao-e-questoes-referentes-ao-projeto">Documentação e questões referentes ao projeto</h2>
+<ol>
+<li>
+<p>Que algoritmo deve ser utilizado para desenvolver um agente jogador de <em>Connect4 PopOut</em> vencedor? Deve-se utilizar uma implementação de Min-Max com poda alpha-beta? Se sim, qual a profundidade que deverá ser utilizada para evitar processamentos superiores a 10 segundos por jogada? Qual a função de utilidade que deve ser utilizada? </p>
+</li>
+<li>
+<p>O seu jogador faz uso de alguma base de conhecimento? Se sim, como ela é utilizada durante o processo de tomada de decisão? </p>
+</li>
+<li>
+<p>Foi utilizada alguma função de utilidade não definida manualmente, por exemplo, alguma função de utilidade gerada a partir de um processo de aprendizagem de máquina supervisionado? Se sim, como é que foi o treinamento desta função de utilidade? Como foi feita a integração desta função de utilidade com o restante do código? </p>
+</li>
+<li>
+<p>Qual a sua expectativa com relação ao desempenho do seu agente? Você acredita que ele irá desempenhar bem na competição? Por que? Você executou testes contra outros jogadores? Qual foram os resultados? </p>
+</li>
+<li>
+<p>Quais foram as principais referências utilizadas para a implementação do seu jogador? </p>
+</li>
+<li>
+<p>Existem diferenças significativas entre um jogador de <em>Connect4</em> e um jogador de <em>Connect4 PopOut</em> em termos de árvore de busca e função de avaliação? É possível utilizar o jogador implementado para o <em>Connect4 PopOut</em> em competições de <em>Connect4</em> sem muitas modificações? </p>
+</li>
+</ol>
+<p>A documentação entregue precisa responder todas as perguntas acima. As respostas para as perguntas de uma forma geral precisam ser baseadas em evidências, de preferência dados vindos de experimentos. Principalmente, as respostas para as perguntas 4 e 6.</p>
+<h3 id="rubrica-da-avaliacao">Rubrica da avaliação</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Conceito</th>
+<th align="left">Definição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Insuficiente (I)</td>
+<td align="left">Não respondeu nem 50% das perguntas.</td>
+</tr>
+<tr>
+<td align="left">Em Desenvolvimento (D)</td>
+<td align="left">Não respondeu todas as perguntas.</td>
+</tr>
+<tr>
+<td align="left">Básico (C)</td>
+<td align="left">Respondeu todas as perguntas mas de forma muito supercial.</td>
+</tr>
+<tr>
+<td align="left">Esperado (B)</td>
+<td align="left">Respondeu todas as perguntas de forma completa, citando todas as referências, mas não apresentou dados que justificam algumas das respostas.</td>
+</tr>
+<tr>
+<td align="left">Avançado (A+)</td>
+<td align="left">Respondeu todas as perguntas de forma completa, citando todas as referências e apresentando todos os dados necessários para as respostas fornecidas.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="competicao">Competição</h2>
+<p>No dia <strong>28/04/2022</strong> (quinta-feira) vamos executar uma competição onde todos os jogadores irão jogar em um campeonato todos contra todos com turno e returno: <code>python Tournament.py</code>. O código fonte da lógica do torneio está <a href="../code/games/fourinrow_popout/Tournament.py">aqui</a>.</p>
+<p>O jogador que tiver o maior número de pontos será o campeão do torneio. Abaixo segue a tabela convertendo a colocação na competição com o conceito no projeto:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Colocação</th>
+<th align="left">Definição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Primeiro lugar</td>
+<td align="left">A+</td>
+</tr>
+<tr>
+<td align="left">Segundo lugar</td>
+<td align="left">A</td>
+</tr>
+<tr>
+<td align="left">Terceiro lugar</td>
+<td align="left">B</td>
+</tr>
+<tr>
+<td align="left">Demais jogadores</td>
+<td align="left">C</td>
+</tr>
+<tr>
+<td align="left">Jogadores que cometeram alguma infração</td>
+<td align="left">I</td>
+</tr>
+</tbody>
+</table>
+<p>A agenda do dia será composta pelas seguintes atividades: </p>
+<ul>
+<li>
+<p>Torneio de preparação: vamos executar um torneio com todos os participantes. Identificar se algum participante cometeu alguma infração, analisar o log, etc. </p>
+</li>
+<li>
+<p>Depois do torneio de preparação, cada participante poderá calibrar a sua solução da forma que achar mais adequada. </p>
+</li>
+<li>
+<p>Depois dos eventuais ajustes então vamos iniciar o torneio de fato onde todas as regras descritas acima serão aplicadas. </p>
+</li>
+</ul>
+<h2 id="bonus-por-experimentar-abordagens-diferentes">Bônus por experimentar abordagens diferentes</h2>
+<p>Aquelas implementações que fizerem uso de alguma abordagem não discutida em sala de aula. Ou seja, fornecem algum elemento de inovação para a disciplina, poderão ter a sua nota na competição incrementada em até dois níveis. Por exemplo, se o jogador ficou em terceito lugar (conceito B) então o conceito final dele será A+. Eventualmente, jogadores que cometerem algum tipo de infração durante a competição, mas estão utilizando algo diferente do que foi discutido em sala de aula também terão a sua nota da competição incrementada de I para C, por exemplo. </p>
+<p>É importante ressaltar que esta abordagem diferente precisa ser muito bem fundamentada para ser considerada como uma inovação. Esta fundamentação precisa fazer parte da documentação do projeto. </p>
+<h2 id="nota-final-do-projeto">Nota final do projeto</h2>
+<p>A nota final do projeto será uma média simples entre a nota da documentação e a nota da competição. </p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 17, 2022</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.0.0/js-yaml.min.js"></script>
+      
+        <script src="../../js/markdown-enhancer.js"></script>
+      
+    
+  </body>
+</html>
