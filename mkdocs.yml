@@ -13,10 +13,12 @@ nav:
   - 'Home': 'index.md'
   - 'Ementa': 'ementa.md'
   - 'Plano de Aula': 'plano_de_aulas.md'
-  - 'Crtitérios para Aprovação': 'avaliacao.md'
-  - 'Aulas':
+  - 'Critérios para Aprovação': 'avaliacao.md'
+  - 'Temas':
     - 'aulas/01_introducao_ia/index.md'
     - 'aulas/02_agentes_autonomos/index.md'
+  - 'Enunciados':
+    - 'enunciados/'
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.0.0/js-yaml.min.js

@@ -6,3 +6,4 @@ tabulate
 requests
 pandas
 openpyxl
+pytest
