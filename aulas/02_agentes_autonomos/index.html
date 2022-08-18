@@ -245,14 +245,14 @@
       
       
         <label class="md-nav__link" for="__nav_5">
-          Temas
+          Aulas
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Temas" data-md-level="1">
+      <nav class="md-nav" aria-label="Aulas" data-md-level="1">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
-          Temas
+          Aulas
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -316,17 +316,38 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#exercicio-aspirador-de-po" class="md-nav__link">
-    Exercício: Aspirador de Pó
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_modelagem/" class="md-nav__link">
+        Modelagem dos problemas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_configuracao/" class="md-nav__link">
+        Configuração do ambiente
+      </a>
     </li>
   
 
@@ -355,14 +376,14 @@
       
       
         <label class="md-nav__link" for="__nav_6">
-          Enunciados
+          Referências
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Enunciados" data-md-level="1">
+      <nav class="md-nav" aria-label="Referências" data-md-level="1">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
-          Enunciados
+          Referências
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -372,8 +393,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../enunciados/" class="md-nav__link">
-        None
+      <a href="../../referencias/03_algoritmos_busca/" class="md-nav__link">
+        Algoritmos de Busca
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../referencias/04_busca_competitiva/" class="md-nav__link">
+        Busca Competitiva
       </a>
     </li>
   
@@ -419,13 +454,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#exercicio-aspirador-de-po" class="md-nav__link">
-    Exercício: Aspirador de Pó
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -453,38 +481,25 @@
 <li>ir para a posição da esquerda</li>
 <li>ir para a posição da direita</li>
 </ul>
-<p>Em grupo responda as seguintes perguntas: </p>
+<p><img src="figuras/aspirador_po.png" width="400" height="200"></p>
+<p>Em <strong>grupo</strong> de 4 pessoas responda as seguintes perguntas (tempo de 15 minutos): </p>
 <ul>
-<li>Quais os estados possíveis do mundo do aspirador e as transições? </li>
+<li>Quais são os estados possíveis do mundo do aspirador e as transições?</li>
+<li>Quais são as consequências das ações sobre os estados? As ações são determinísticas? </li>
 <li>Apresente uma solução possível. Uma sequência de ações que fazem o robô sair do estado inicial e chegar no estado final. </li>
 </ul>
-<h2 id="exercicio-aspirador-de-po">Exercício: Aspirador de Pó</h2>
-<p>Considere o exemplo do aspirador de pó. Uma possível solução está implementada no 
-arquivo <a href="../code/search/VacuumWorld.py">code/search/VacuumWorld.py</a>. Considerando esta implementação, execute as seguintes ações:</p>
-<ul>
-<li>
-<p>acesse o diretório <strong>code/search</strong> e execute o comando <code>python VacuumWorld.py</code>. Qual foi a resposta fornecida pelo programa? O que esta resposta representa? Por que as respostas são diferentes?</p>
-</li>
-<li>
-<p>Acesse o código <code>VacuumWorld.py</code>. Quais são os métodos definidos na classe VacuumWorld? Descreve o que você acredita que cada método realiza.</p>
-</li>
-<li>
-<p>Vá até a função <code>main()</code> do arquivo <code>VacuumWorld.py</code>. Esta função faz uso de algum algoritmo de busca? Quais? </p>
-</li>
-<li>
-<p>Altere o estado inicial e o estado objetivo descritos no arquivo <code>VacuumWorld.py</code>, execute novamente o comando <code>python VacuumWorld.py</code> e veja o que acontece. </p>
-</li>
-<li>
-<p>Execute o comando <code>pytest test_VacuumWorld.py --capture=tee-sys</code>. O que aconteceu? Você sabe explicar? Você saberia adicionar mais uma função de teste no arquivo <code>test_VacuumWorld.py</code>?</p>
-</li>
-</ul>
+<p>Prepararem-se para eventualmente apresentar as suas respostas. </p>
+<details class="warning">
+<summary>Conceitos que devem ser explorados neste exercício</summary>
+<p>Representação de um problema na forma de <strong>estado</strong>, <strong>transição</strong>, <strong>grafo</strong></p>
+</details>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 17, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 18, 2022</span>
       
     
   </small>
@@ -521,6 +536,21 @@ arquivo <a href="../code/search/VacuumWorld.py">code/search/VacuumWorld.py</a>. 
           </div>
         </a>
       
+      
+        
+        <a href="../03_modelagem/" class="md-footer__link md-footer__link--next" aria-label="Next: Modelagem dos problemas" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Modelagem dos problemas
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
       
     </nav>
   

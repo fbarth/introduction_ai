@@ -2,72 +2,87 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://fbarth.github.io/introduction_ai/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fbarth.github.io/introduction_ai/avaliacao/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fbarth.github.io/introduction_ai/ementa/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fbarth.github.io/introduction_ai/plano_de_aulas/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fbarth.github.io/introduction_ai/_snippets/plano_aula/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fbarth.github.io/introduction_ai/aulas/01_introducao_ia/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fbarth.github.io/introduction_ai/aulas/01_introducao_ia/slides/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fbarth.github.io/introduction_ai/aulas/02_agentes_autonomos/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fbarth.github.io/introduction_ai/aulas/02_agentes_autonomos/slides/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://fbarth.github.io/introduction_ai/aulas/03_busca_cega/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <loc>https://fbarth.github.io/introduction_ai/aulas/03_modelagem/</loc>
+         <lastmod>2022-08-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://fbarth.github.io/introduction_ai/aulas/04_configuracao/</loc>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fbarth.github.io/introduction_ai/enunciados/implementacao_busca_competitiva/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fbarth.github.io/introduction_ai/enunciados/implementacoes_busca_parte1/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fbarth.github.io/introduction_ai/enunciados/implementacoes_busca_parte2/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://fbarth.github.io/introduction_ai/enunciados/implementacoes_busca_parte3/</loc>
-         <lastmod>2022-08-17</lastmod>
+         <lastmod>2022-08-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://fbarth.github.io/introduction_ai/referencias/03_algoritmos_busca/</loc>
+         <lastmod>2022-08-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://fbarth.github.io/introduction_ai/referencias/04_busca_competitiva/</loc>
+         <lastmod>2022-08-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

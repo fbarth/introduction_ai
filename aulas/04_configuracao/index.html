@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://fbarth.github.io/introduction_ai/enunciados/implementacoes_busca_parte2/">
+        <link rel="canonical" href="https://fbarth.github.io/introduction_ai/aulas/04_configuracao/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.0">
     
     
       
-        <title>Exercícios sobre busca em espaço de estados: parte 2 - Inteligência Artificial 2022/2</title>
+        <title>Configuração do ambiente - Inteligência Artificial 2022/2</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercicios-sobre-busca-em-espaco-de-estados-parte-2" class="md-skip">
+        <a href="#configuracao-do-ambiente" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exercícios sobre busca em espaço de estados: parte 2
+              Configuração do ambiente
             
           </span>
         </div>
@@ -232,12 +232,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       
       
@@ -260,7 +262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aulas/01_introducao_ia/" class="md-nav__link">
+      <a href="../01_introducao_ia/" class="md-nav__link">
         Introdução à Inteligência Artificial
       </a>
     </li>
@@ -274,7 +276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aulas/02_agentes_autonomos/" class="md-nav__link">
+      <a href="../02_agentes_autonomos/" class="md-nav__link">
         Agentes Autônomos
       </a>
     </li>
@@ -288,7 +290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aulas/03_modelagem/" class="md-nav__link">
+      <a href="../03_modelagem/" class="md-nav__link">
         Modelagem dos problemas
       </a>
     </li>
@@ -300,11 +302,59 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../aulas/04_configuracao/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Configuração do ambiente
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Configuração do ambiente
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercicio-aspirador-de-po" class="md-nav__link">
+    Exercício: Aspirador de Pó
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#espaco-com-3-quartos" class="md-nav__link">
+    Espaço com 3 quartos
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -405,29 +455,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#exercicio-soma-1-e-soma-2-com-heuristica" class="md-nav__link">
-    Exercício soma +1 e soma +2 com heurística
+  <a href="#exercicio-aspirador-de-po" class="md-nav__link">
+    Exercício: Aspirador de Pó
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#problema-do-caminho-entre-cidades-com-heuristica" class="md-nav__link">
-    Problema do caminho entre cidades com heurística
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#problema-do-cavalo-no-tabuleiro-de-xadrez-com-heuristica" class="md-nav__link">
-    Problema do cavalo no tabuleiro de xadrez com heurística
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#as-oito-rainhas" class="md-nav__link">
-    As oito rainhas
+  <a href="#espaco-com-3-quartos" class="md-nav__link">
+    Espaço com 3 quartos
   </a>
   
 </li>
@@ -444,82 +480,70 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/fbarth/introduction_ai/edit/master/docs/enunciados/implementacoes_busca_parte2.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/fbarth/introduction_ai/edit/master/docs/aulas/04_configuracao/index.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="exercicios-sobre-busca-em-espaco-de-estados-parte-2">Exercícios sobre busca em espaço de estados: parte 2</h1>
-<p>Neste documento estão descritos outros problemas relacionados com busca em espaço de estados 
-ou versões mais complexas dos 
-problemas já apresentados na <a href="../implementacoes_busca_parte1/">parte 1</a></p>
-<h2 id="exercicio-soma-1-e-soma-2-com-heuristica">Exercício soma +1 e soma +2 com heurística</h2>
-<p>Quando você mudou o objetivo para 1000, dependendo da máquina que você estava usando, ou você teve problemas de memória,
-ou demorou muito para trazer um resultado ou simplesmente não retornou nenhum resultado até o momento em que você decidiu 
-interromper o processo. </p>
-<p>Isto aconteceu porque o tamanho da árvore é muito grande e os algoritmos de busca cegos (sistemáticos) não fazem uso de nenhum
-recurso para podar a árvore de busca. Por isso que para resolver este problema é necessário fazer uso de algoritmos de busca
-informados. Em outras palavras, algoritmos que fazem uso de heurísticas para escolher o melhor caminho.</p>
+<h1 id="configuracao-do-ambiente">Configuração do ambiente</h1>
+<p>Para executar esta atividade você terá que fazer o fork do projeto <a href="https://github.com/fbarth/introduction_ai">https://github.com/fbarth/introduction_ai</a>. </p>
+<p>Recomenda-se fortemente que todo estudante faça estas atividades em sua máquina. Os problemas podem ser discutidos em grupo, no entanto, cada aluno precisa ter a sua própria implementação. </p>
+<p>Assim que você tiver o projeto na sua máquina, você terá que configurar o ambiente virtual: </p>
+<div class="highlight"><pre><span></span><code>python3 -m virtualenv venv
+<span class="nb">source</span> venv/bin/activate
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+</code></pre></div>
+<p><em>Sempre use o virtualenv para organizar as dependências do seu projeto. Desta forma fica mais simples a manutenção do mesmo.</em></p>
+<p>Na pasta <code>code</code> deste projeto você irá encontrar diversos arquivos <code>python</code>. São os arquivos desta pasta que você irá utilizar neste exercício.</p>
+<h2 id="exercicio-aspirador-de-po">Exercício: Aspirador de Pó</h2>
+<p>Considere o exemplo do aspirador de pó. Uma possível solução está implementada no 
+arquivo <a href="../code/search/VacuumWorld.py">code/search/VacuumWorld.py</a>. Considerando esta implementação, execute as seguintes ações:</p>
 <ul>
 <li>
-<p>Inclua uma heurística (utilize a interface Heuristica) para a resolução do
-problema. Qual a solução apresentada pelo algoritmo ganancioso? Qual é a solução apresentada pelo algoritmo A*?</p>
+<p>acesse o diretório <strong>code/search</strong> e execute o comando <code>python VacuumWorld.py</code>. Qual foi a resposta fornecida pelo programa? O que esta resposta representa? Por que as respostas são diferentes?</p>
 </li>
 <li>
-<p>Mude a meta para 1001 e repita a execução com os algoritmos ganancioso e A*. A implementação se comportou adequadamente?</p>
+<p>Acesse o código <code>VacuumWorld.py</code>. Quais são os métodos definidos na classe VacuumWorld? Descreve o que você acredita que cada método realiza.</p>
 </li>
 <li>
-<p>Qual foi a heurística utilizada?</p>
+<p>Vá até a função <code>main()</code> do arquivo <code>VacuumWorld.py</code>. Esta função faz uso de algum algoritmo de busca? Quais? </p>
+</li>
+<li>
+<p>Altere o estado inicial e o estado objetivo descritos no arquivo <code>VacuumWorld.py</code>, execute novamente o comando <code>python VacuumWorld.py</code> e veja o que acontece. </p>
+</li>
+<li>
+<p>Execute o comando <code>pytest test_VacuumWorld.py --capture=tee-sys</code>. O que aconteceu? Você sabe explicar? Você saberia adicionar mais uma função de teste no arquivo <code>test_VacuumWorld.py</code>?</p>
 </li>
 </ul>
-<h2 id="problema-do-caminho-entre-cidades-com-heuristica">Problema do caminho entre cidades com heurística</h2>
+<details class="warning">
+<summary>O que são algoritmos de busca?</summary>
+<ul>
+<li>Algoritmo de Busca em Largura</li>
+<li>Algoritmo de Busca em Profundidade</li>
+<li>Algoritmo de Busca de Custo Uniforme</li>
+<li>Algoritmo de Busca em Profundidade Iterativo</li>
+</ul>
+</details>
+<h2 id="espaco-com-3-quartos">Espaço com 3 quartos</h2>
+<p>Vamos implementar um Aspirador de Pó com 3 quartos? Três quartos lado-a-lado (esquerda, centro e direita)? </p>
+<p>Para esta atividade já temos um código pré-pronto: <code>VacuumWorld3Room.py</code>. Neste código falta completar o código de alguns métodos da classe.  </p>
 <ul>
 <li>
-<p>Quanto tempo a solução implementada para o problema do caminho entre cidades levou para encontrar uma
-solução de <em>i</em> até <em>x</em>? Gastou muito mais tempo que as demais buscas? Por que?</p>
+<p>Complete os métodos da classe e execute os dois algoritmos que estão na função main(): Busca em Largura e Busca em Profundidade. Liste as soluções encontradas por ambos os algoritmos.</p>
 </li>
 <li>
-<p>Será que é possível criar uma heurística admissível para este problema? Qual seria?</p>
-</li>
-<li>
-<p>O arquivo <code>MapHeuristics.csv</code> tem, de forma implícita, uma heurística codificada. Entenda o significado desta 
-heurística e utilize os dados contigos neste arquivo para definir a função <code>h()</code>. </p>
-</li>
-<li>
-<p>Quais foram os resultados encontrados? Teve alguma diferença? Por que?</p>
+<p>O arquivo <code>SearchAlgorithms.py</code> implementa diveros algoritmos de busca, inclusive o BPI. Altere o código do arquivo <code>VacuumWorld3Room.py</code> para executar também o algoritmo de busca em profundidade iterativo (BPI). Qual foi o resultado encontrado pelo algoritmo BPI para este problema? Foi igual a outro resultado já apresentado? </p>
 </li>
 </ul>
-<h2 id="problema-do-cavalo-no-tabuleiro-de-xadrez-com-heuristica">Problema do cavalo no tabuleiro de xadrez com heurística</h2>
-<ul>
-<li>
-<p>Quais foram os resultados encontrados, incluindo o tempo de processamento, para a 
-execução com os algoritmos de busca cegos?</p>
-</li>
-<li>
-<p>Será que é possível criar uma heurística para este problema? Caso positivo, use o algoritmo A* ou ganancioso para encontrar 
-respostas para este problema. </p>
-</li>
-</ul>
-<p>Referências que podem ajudar no desenvolvimento da solução:</p>
-<ul>
-<li><a href="https://pt.wikipedia.org/wiki/Problema_do_cavalo">Verbete na Wikipedia sobre o Problema do Cavalo</a></li>
-<li><a href="http://www.din.uem.br/sbpo/sbpo2013/pdf/arq0328.pdf">Costa &amp; Sá. Heurística eficiente para o passeio aberto do cavalo a partir de casas arbitrárias em tabuleiros 
-quadrados. Simpósio Brasileiro de Pesquisa Operacional. 2013</a></li>
-</ul>
-<h2 id="as-oito-rainhas">As oito rainhas</h2>
-<p>Coloque <em>N</em> rainhas em um tabuleiro de xadrez (<em>N x N</em> casas), onde <em>4 &lt;= N &lt;= 10</em>, 
-de maneira que nenhuma rainha ameace outra, i.e., as rainhas não devem compartilhar colunas, 
-linhas ou diagonais do tabuleiro.</p>
-<h1 id="proximas-atividades">Próximas atividades</h1>
-<p>[<a href="../implementacoes_busca_parte3/">Próximas atividades</a>]</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 17, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 18, 2022</span>
       
     
   </small>
@@ -537,6 +561,42 @@ linhas ou diagonais do tabuleiro.</p>
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../03_modelagem/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Modelagem dos problemas" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Modelagem dos problemas
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../referencias/03_algoritmos_busca/" class="md-footer__link md-footer__link--next" aria-label="Next: Algoritmos de Busca" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Algoritmos de Busca
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
