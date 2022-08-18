@@ -14,11 +14,14 @@ nav:
   - 'Ementa': 'ementa.md'
   - 'Plano de Aula': 'plano_de_aulas.md'
   - 'Critérios para Aprovação': 'avaliacao.md'
-  - 'Temas':
+  - 'Aulas':
     - 'aulas/01_introducao_ia/index.md'
     - 'aulas/02_agentes_autonomos/index.md'
-  - 'Enunciados':
-    - 'enunciados/'
+    - 'aulas/03_modelagem/index.md'
+    - 'aulas/04_configuracao/index.md'
+  - 'Referências':
+    - 'referencias/03_algoritmos_busca/index.md'
+    - 'referencias/04_busca_competitiva/index.md'
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.0.0/js-yaml.min.js
