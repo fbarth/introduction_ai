@@ -7,3 +7,4 @@ requests
 pandas
 openpyxl
 pytest
+pylint

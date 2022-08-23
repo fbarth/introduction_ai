@@ -35,9 +35,9 @@ class VacuumWorld(State):
         # Nao eh necessario
         sucessors.append(VacuumWorld('right', self.isLeftRoomClean, self.isRightRoomClean, 'Move Right'))
         sucessors.append(VacuumWorld('left', self.isLeftRoomClean, self.isRightRoomClean, 'Move Left'))
-		
-		#Implementar ações de limpeza. Importante: Verificar qual a VacuumPos e se a posição está suja
-		#Como designar sucessors condicionais?
+        
+        #Implementar ações de limpeza. Importante: Verificar qual a VacuumPos e se a posição está suja
+        #Como designar sucessors condicionais?
         if (self.vacuumPosition == 'right'):
             sucessors.append(VacuumWorld(self.vacuumPosition, self.isLeftRoomClean, True, 'clean'))
         else:

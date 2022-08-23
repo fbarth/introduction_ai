@@ -14,9 +14,15 @@ Um robô aspirador de pó deve limpar uma casa com duas posições. As operaçõ
 
 Em **grupo** de 4 pessoas responda as seguintes perguntas (tempo de 15 minutos): 
 
-* Quais são os estados possíveis do mundo do aspirador e as transições?
-* Quais são as consequências das ações sobre os estados? As ações são determinísticas? 
+* O que é relevante representar nos estados do mundo? Como os estados são estruturados (estrutura de dados) e qual o significado dela (dos campos)?
+* Quais são os estados possíveis do mundo do aspirador e as suas transições?
+* Quais são as consequências das ações sobre os estados? As ações são determinísticas?
+* É possível desenhar o **grafo** com todos os estados e transições para este problema? 
 * Apresente uma solução possível. Uma sequência de ações que fazem o robô sair do estado inicial e chegar no estado final. 
+
+Considere como estado final a situação ilustrada abaixo: 
+
+<img src="figuras/aspirador_po_final.png" width="400" height="200">
 
 Prepararem-se para eventualmente apresentar as suas respostas. 
 

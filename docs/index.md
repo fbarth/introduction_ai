@@ -15,7 +15,7 @@ Segundas das 12:00 até 13:30.
 ## Informações adicionais sobre os projetos e implementações
 
 Todas os projetos e implementações irão utilizar a linguagem de programação **Python**. 
-Algumas das implementações irão utilizar o toolkit [Gym OpenAI](https://gym.openai.com/).
+Algumas das implementações irão utilizar o toolkit [Gym OpenAI](https://gym.openai.com/) e, talvez, outros toolkits.
 
 Espera-se que os alunos desta disciplina tenham conhecimento de programação em Python. 
 

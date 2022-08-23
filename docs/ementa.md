@@ -1,5 +1,9 @@
 # Ementa
 
+Aplicações modernas apontam para um conceito de Inteligência Artificial (IA) voltado para duas principais características: **autonomia** e **adaptabilidade**. 
+Autonomia é a habilidade de executar tarefas em contextos complexos sem constante intervenção do ser humano e adaptabilidade é a habilidade de melhorar seu 
+desempenho aprendendo com a experiência. 
+
 Introdução à Inteligência Artificial; Definições de Agente Autônomo; Caracterização de Ambientes; Resolução de problemas usando espaço de busca; Estratégias de busca; Algoritmos de busca cega e informados; Conceito de Heurística; Teoria de Jogos e Ambientes Competitivos; Aprendizagem por Reforço.  
 
 ## Objetivos
@@ -7,7 +11,7 @@ Introdução à Inteligência Artificial; Definições de Agente Autônomo; Cara
 Ao final da disciplina o estudante será capaz de:
 
 1. Descrever os conceitos, técnicas e métodos para o desenvolvimento de Agentes Autônomos.
-2. Saber identificar quais tipos de problemas podem ser resolvidos através do uso de Agentes Autônomos. 
+2. Identificar quais tipos de problemas podem ser resolvidos através do uso de Agentes Autônomos. 
 <!--3. Aplicar o conceito de representação de estados e algoritmos de busca no desenvolvimento de agentes autônomos para resolução de problemas clássicos de nível introdutório. -->
 3. Criar soluções para alguns problemas clássicos desta área sob um ponto de vista introdutório.
 4. Especificar, desenvolver e testar um projeto que faça uso de Agentes Autônomos para resolver um problema complexo.  
