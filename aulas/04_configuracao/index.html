@@ -351,6 +351,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#aspirador-de-po-em-uma-casa-configuravel" class="md-nav__link">
+    Aspirador de pó em uma casa configurável
+  </a>
+  
+    <nav class="md-nav" aria-label="Aspirador de pó em uma casa configurável">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#um-outro-exemplo" class="md-nav__link">
+    Um outro exemplo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -468,6 +488,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#aspirador-de-po-em-uma-casa-configuravel" class="md-nav__link">
+    Aspirador de pó em uma casa configurável
+  </a>
+  
+    <nav class="md-nav" aria-label="Aspirador de pó em uma casa configurável">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#um-outro-exemplo" class="md-nav__link">
+    Um outro exemplo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -499,7 +539,7 @@ pip install -r requirements.txt
 <p>Na pasta <code>code</code> deste projeto você irá encontrar diversos arquivos <code>python</code>. São os arquivos desta pasta que você irá utilizar neste exercício.</p>
 <h2 id="exercicio-aspirador-de-po">Exercício: Aspirador de Pó</h2>
 <p>Considere o exemplo do aspirador de pó. Uma possível solução está implementada no 
-arquivo <a href="../code/search/VacuumWorld.py">code/search/VacuumWorld.py</a>. Considerando esta implementação, execute as seguintes ações:</p>
+arquivo <a href="https://github.com/fbarth/introduction_ai/blob/master/code/search/VacuumWorld.py">code/search/VacuumWorld.py</a>. Considerando esta implementação, execute as seguintes ações:</p>
 <ul>
 <li>
 <p>acesse o diretório <strong>code/search</strong> e execute o comando <code>python VacuumWorld.py</code>. Qual foi a resposta fornecida pelo programa? O que esta resposta representa? Por que as respostas são diferentes?</p>
@@ -534,16 +574,53 @@ arquivo <a href="../code/search/VacuumWorld.py">code/search/VacuumWorld.py</a>. 
 <p>Complete os métodos da classe e execute os dois algoritmos que estão na função main(): Busca em Largura e Busca em Profundidade. Liste as soluções encontradas por ambos os algoritmos.</p>
 </li>
 <li>
-<p>O arquivo <code>SearchAlgorithms.py</code> implementa diveros algoritmos de busca, inclusive o BPI. Altere o código do arquivo <code>VacuumWorld3Room.py</code> para executar também o algoritmo de busca em profundidade iterativo (BPI). Qual foi o resultado encontrado pelo algoritmo BPI para este problema? Foi igual a outro resultado já apresentado? </p>
+<p>O arquivo <code>SearchAlgorithms.py</code> implementa diversos algoritmos de busca, inclusive o BPI. Altere o código do arquivo <code>VacuumWorld3Room.py</code> para executar também o algoritmo de busca em profundidade iterativo (BPI). Qual foi o resultado encontrado pelo algoritmo BPI para este problema? Foi igual a outro resultado já apresentado? </p>
 </li>
 </ul>
+<h2 id="aspirador-de-po-em-uma-casa-configuravel">Aspirador de pó em uma casa configurável</h2>
+<p><strong>Que tal implementar um aspirador de pó que consegue atuar em qualquer casa retangular?</strong> </p>
+<p>Utilize como exemplo o arquivo <code>code/search/ProblemSpecificationExample.py</code> para implementar a classe <code>VacuumWorldGeneric.py</code>. O método <code>main</code> da classe <code>VacuumWorldGeneric.py</code> deve receber um arquivo texto que descreve a situação do ambiente e as posições do robô como parâmetros. Por exemplo, para o seguinte ambiente: </p>
+<p><img src="img/mundo_ex_1.png"></p>
+<p>O seguinte arquivo de configuração será entregue: </p>
+<div class="highlight"><pre><span></span><code>L;S;S;S
+L;L;L;L
+S;S;S;S
+</code></pre></div>
+<p>E o seguinte comando deve ser executado:</p>
+<div class="highlight"><pre><span></span><code>python VacuumWorldGeneric.py configuracao.txt <span class="m">0</span> <span class="m">0</span>
+</code></pre></div>
+<p>As ações que o robô (agente) sabe executar são: </p>
+<ul>
+<li><em>esq</em>: ir para a esquerda;</li>
+<li><em>dir</em>: ir para a direita;</li>
+<li><em>baixo</em>: ir para baixo;</li>
+<li><em>cima</em>: ir para cima;</li>
+<li><em>limpar</em>: limpar o quarto onde está.</li>
+</ul>
+<p>Ao executar o comando acima, o programa deverá gerar uma sequência de ações que fará com que o robô saia do <strong>estado inicial</strong> e chegue em um <strong>estado final</strong> válido. Um estado final válido é um estado onde todos os quartos (quadrados) estão limpos. </p>
+<p>Uma sequência de ações válida para resolver o estado acima é: </p>
+<div class="highlight"><pre><span></span><code>esq; limpar; esq; limpar; esq; baixo; baixo; limpar; dir; limpar; dir; limpar; dir; limpar
+</code></pre></div>
+<h3 id="um-outro-exemplo">Um outro exemplo</h3>
+<p>Considere um novo exemplo:</p>
+<p><img src="img/mundo_ex_2.png"></p>
+<p>Para este exemplo o arquivo de configuração precisa ter este conteúdo:</p>
+<div class="highlight"><pre><span></span><code>L;S;S;S
+L;L;S;S
+S;S;S;S
+</code></pre></div>
+<p>E a chamada para o programa: </p>
+<div class="highlight"><pre><span></span><code>python VacuumWorldGeneric.py configuracao.txt <span class="m">1</span> <span class="m">3</span>
+</code></pre></div>
+<p>O programa que você irá implementar não precisa se preocupar com a validação dos dados de entrada. Assume-se que os dados de entrada estão corretos, por exemplo, a posição do robô é uma posição válida. </p>
+<p><strong>A única tarefa que o programa deve fazer é se existir solução então retornar uma sequência de ações ótima para o problema. Se não existir solução então informar que não existe solução.</strong></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 18, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 23, 2022</span>
       
     
   </small>
