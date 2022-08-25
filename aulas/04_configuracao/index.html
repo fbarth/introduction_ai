@@ -529,13 +529,6 @@
 <h1 id="configuracao-do-ambiente">Configuração do ambiente</h1>
 <p>Para executar esta atividade você terá que fazer o fork do projeto <a href="https://github.com/fbarth/introduction_ai">https://github.com/fbarth/introduction_ai</a>. </p>
 <p>Recomenda-se fortemente que todo estudante faça estas atividades em sua máquina. Os problemas podem ser discutidos em grupo, no entanto, cada aluno precisa ter a sua própria implementação. </p>
-<p>Assim que você tiver o projeto na sua máquina, você terá que configurar o ambiente virtual: </p>
-<div class="highlight"><pre><span></span><code>python3 -m virtualenv venv
-<span class="nb">source</span> venv/bin/activate
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-</code></pre></div>
-<p><em>Sempre use o virtualenv para organizar as dependências do seu projeto. Desta forma fica mais simples a manutenção do mesmo.</em></p>
 <p>Na pasta <code>code</code> deste projeto você irá encontrar diversos arquivos <code>python</code>. São os arquivos desta pasta que você irá utilizar neste exercício.</p>
 <h2 id="exercicio-aspirador-de-po">Exercício: Aspirador de Pó</h2>
 <p>Considere o exemplo do aspirador de pó. Uma possível solução está implementada no 
@@ -554,7 +547,7 @@ arquivo <a href="https://github.com/fbarth/introduction_ai/blob/master/code/sear
 <p>Altere o estado inicial e o estado objetivo descritos no arquivo <code>VacuumWorld.py</code>, execute novamente o comando <code>python VacuumWorld.py</code> e veja o que acontece. </p>
 </li>
 <li>
-<p>Execute o comando <code>pytest test_VacuumWorld.py --capture=tee-sys</code>. O que aconteceu? Você sabe explicar? Você saberia adicionar mais uma função de teste no arquivo <code>test_VacuumWorld.py</code>?</p>
+<p>Execute o comando <code>pytest test_VacuumWorld.py --capture=tee-sys</code><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. O que aconteceu? Você sabe explicar? Você saberia adicionar mais uma função de teste no arquivo <code>test_VacuumWorld.py</code>?</p>
 </li>
 </ul>
 <details class="warning">
@@ -565,6 +558,7 @@ arquivo <a href="https://github.com/fbarth/introduction_ai/blob/master/code/sear
 <li>Algoritmo de Busca de Custo Uniforme</li>
 <li>Algoritmo de Busca em Profundidade Iterativo</li>
 </ul>
+<p>Para entender melhor cada um dos algoritmos de busca, acesse o material sobre <a href="../../referencias/03_algoritmos_busca/busca_versaoFabricio.pdf">algoritmos de busca</a>.</p>
 </details>
 <h2 id="espaco-com-3-quartos">Espaço com 3 quartos</h2>
 <p>Vamos implementar um Aspirador de Pó com 3 quartos? Três quartos lado-a-lado (esquerda, centro e direita)? </p>
@@ -614,13 +608,21 @@ S;S;S;S
 </code></pre></div>
 <p>O programa que você irá implementar não precisa se preocupar com a validação dos dados de entrada. Assume-se que os dados de entrada estão corretos, por exemplo, a posição do robô é uma posição válida. </p>
 <p><strong>A única tarefa que o programa deve fazer é se existir solução então retornar uma sequência de ações ótima para o problema. Se não existir solução então informar que não existe solução.</strong></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Se <code>pytest test_VacuumWorld.py --capture=tee-sys</code> não funcionar na sua máquina, execute <code>pytest test_VacuumWorld.py --capture=no</code>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 23, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 25, 2022</span>
       
     
   </small>
