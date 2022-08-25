@@ -50,6 +50,8 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - footnotes
 
 plugins: 
   - git-revision-date-localized
+
