@@ -4,17 +4,6 @@ Para executar esta atividade você terá que fazer o fork do projeto [https://gi
 
 Recomenda-se fortemente que todo estudante faça estas atividades em sua máquina. Os problemas podem ser discutidos em grupo, no entanto, cada aluno precisa ter a sua própria implementação. 
 
-Assim que você tiver o projeto na sua máquina, você terá que configurar o ambiente virtual: 
-
-````bash
-python3 -m virtualenv venv
-source venv/bin/activate
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-````
-
-*Sempre use o virtualenv para organizar as dependências do seu projeto. Desta forma fica mais simples a manutenção do mesmo.*
-
 Na pasta `code` deste projeto você irá encontrar diversos arquivos `python`. São os arquivos desta pasta que você irá utilizar neste exercício.
 
 ## Exercício: Aspirador de Pó 
@@ -30,7 +19,9 @@ arquivo [code/search/VacuumWorld.py](https://github.com/fbarth/introduction_ai/b
 
 * Altere o estado inicial e o estado objetivo descritos no arquivo `VacuumWorld.py`, execute novamente o comando `python VacuumWorld.py` e veja o que acontece. 
 
-* Execute o comando `pytest test_VacuumWorld.py --capture=tee-sys`. O que aconteceu? Você sabe explicar? Você saberia adicionar mais uma função de teste no arquivo `test_VacuumWorld.py`?
+* Execute o comando `pytest test_VacuumWorld.py --capture=tee-sys`[^1]. O que aconteceu? Você sabe explicar? Você saberia adicionar mais uma função de teste no arquivo `test_VacuumWorld.py`?
+
+[^1]: Se `pytest test_VacuumWorld.py --capture=tee-sys` não funcionar na sua máquina, execute `pytest test_VacuumWorld.py --capture=no`.
 
 ??? warning "O que são algoritmos de busca?"
 
@@ -38,6 +29,8 @@ arquivo [code/search/VacuumWorld.py](https://github.com/fbarth/introduction_ai/b
     * Algoritmo de Busca em Profundidade
     * Algoritmo de Busca de Custo Uniforme
     * Algoritmo de Busca em Profundidade Iterativo
+
+    Para entender melhor cada um dos algoritmos de busca, acesse o material sobre [algoritmos de busca](../../referencias/03_algoritmos_busca/busca_versaoFabricio.pdf).
 
 ## Espaço com 3 quartos
 
