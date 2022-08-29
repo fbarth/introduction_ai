@@ -1,8 +1,10 @@
-# Ementa
+# Introdução 
 
 Aplicações modernas apontam para um conceito de Inteligência Artificial (IA) voltado para duas principais características: **autonomia** e **adaptabilidade**. 
 Autonomia é a habilidade de executar tarefas em contextos complexos sem constante intervenção do ser humano e adaptabilidade é a habilidade de melhorar seu 
-desempenho aprendendo com a experiência. 
+desempenho aprendendo com a experiência.
+
+# Ementa
 
 Introdução à Inteligência Artificial; Definições de Agente Autônomo; Caracterização de Ambientes; Resolução de problemas usando espaço de busca; Estratégias de busca; Algoritmos de busca cega e informados; Conceito de Heurística; Teoria de Jogos e Ambientes Competitivos; Aprendizagem por Reforço.  
 
