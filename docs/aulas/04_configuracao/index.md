@@ -1,17 +1,17 @@
 # Configuração do ambiente
 
-Para executar esta atividade você terá que fazer o fork do projeto [https://github.com/fbarth/introduction_ai](https://github.com/fbarth/introduction_ai). 
+Para executar esta atividade você terá que fazer o fork do projeto [https://github.com/Insper/ai_code](https://github.com/Insper/ai_code). 
 
 Recomenda-se fortemente que todo estudante faça estas atividades em sua máquina. Os problemas podem ser discutidos em grupo, no entanto, cada aluno precisa ter a sua própria implementação. 
 
-Na pasta `code` deste projeto você irá encontrar diversos arquivos `python`. São os arquivos desta pasta que você irá utilizar neste exercício.
+Na pasta `src` deste projeto você irá encontrar diversos arquivos `python`. São os arquivos desta pasta que você irá utilizar neste exercício.
 
 ## Exercício: Aspirador de Pó 
 
 Considere o exemplo do aspirador de pó. Uma possível solução está implementada no 
-arquivo [code/search/VacuumWorld.py](https://github.com/fbarth/introduction_ai/blob/master/code/search/VacuumWorld.py). Considerando esta implementação, execute as seguintes ações:
+arquivo [src/VacuumWorld.py](https://github.com/Insper/ai_code/blob/main/src/VacuumWorld.py). Considerando esta implementação, execute as seguintes ações:
 
-* acesse o diretório **code/search** e execute o comando `python VacuumWorld.py`. Qual foi a resposta fornecida pelo programa? O que esta resposta representa? Por que as respostas são diferentes?
+* acesse o diretório **src** e execute o comando `python VacuumWorld.py`. Qual foi a resposta fornecida pelo programa? O que esta resposta representa? Por que as respostas são diferentes?
 
 * Acesse o código `VacuumWorld.py`. Quais são os métodos definidos na classe VacuumWorld? Descreve o que você acredita que cada método realiza.
 
@@ -46,17 +46,19 @@ Para esta atividade já temos um código pré-pronto: `VacuumWorld3Room.py`. Nes
 
 **Que tal implementar um aspirador de pó que consegue atuar em qualquer casa retangular?** 
 
-Utilize como exemplo o arquivo `code/search/ProblemSpecificationExample.py` para implementar a classe `VacuumWorldGeneric.py`. O método `main` da classe `VacuumWorldGeneric.py` deve receber um arquivo texto que descreve a situação do ambiente e as posições do robô como parâmetros. Por exemplo, para o seguinte ambiente: 
+Utilize como exemplo o arquivo `src/ProblemSpecificationExample.py` para implementar a classe `VacuumWorldGeneric.py`. O método `main` da classe `VacuumWorldGeneric.py` deve receber um arquivo texto que descreve a situação do ambiente e as posições do robô como parâmetros. Por exemplo, para o seguinte ambiente: 
 
 <img src="img/mundo_ex_1.png">
 
 O seguinte arquivo de configuração será entregue: 
 
 ```text
-L;S;S;S
-L;L;L;L
-S;S;S;S
+0;1;1;1
+0;0;0;0
+1;1;1;1
 ```
+
+onde `0` significa **limpo** e `1` **sujo**.
 
 E o seguinte comando deve ser executado:
 
@@ -89,9 +91,9 @@ Considere um novo exemplo:
 Para este exemplo o arquivo de configuração precisa ter este conteúdo:
 
 ```text
-L;S;S;S
-L;L;S;S
-S;S;S;S
+0;1;1;1
+0;0;1;1
+1;1;1;1
 ```
 
 E a chamada para o programa: 
