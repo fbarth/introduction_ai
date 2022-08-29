@@ -527,15 +527,15 @@
 
 
 <h1 id="configuracao-do-ambiente">Configuração do ambiente</h1>
-<p>Para executar esta atividade você terá que fazer o fork do projeto <a href="https://github.com/fbarth/introduction_ai">https://github.com/fbarth/introduction_ai</a>. </p>
+<p>Para executar esta atividade você terá que fazer o fork do projeto <a href="https://github.com/Insper/ai_code">https://github.com/Insper/ai_code</a>. </p>
 <p>Recomenda-se fortemente que todo estudante faça estas atividades em sua máquina. Os problemas podem ser discutidos em grupo, no entanto, cada aluno precisa ter a sua própria implementação. </p>
-<p>Na pasta <code>code</code> deste projeto você irá encontrar diversos arquivos <code>python</code>. São os arquivos desta pasta que você irá utilizar neste exercício.</p>
+<p>Na pasta <code>src</code> deste projeto você irá encontrar diversos arquivos <code>python</code>. São os arquivos desta pasta que você irá utilizar neste exercício.</p>
 <h2 id="exercicio-aspirador-de-po">Exercício: Aspirador de Pó</h2>
 <p>Considere o exemplo do aspirador de pó. Uma possível solução está implementada no 
-arquivo <a href="https://github.com/fbarth/introduction_ai/blob/master/code/search/VacuumWorld.py">code/search/VacuumWorld.py</a>. Considerando esta implementação, execute as seguintes ações:</p>
+arquivo <a href="https://github.com/Insper/ai_code/blob/main/src/VacuumWorld.py">src/VacuumWorld.py</a>. Considerando esta implementação, execute as seguintes ações:</p>
 <ul>
 <li>
-<p>acesse o diretório <strong>code/search</strong> e execute o comando <code>python VacuumWorld.py</code>. Qual foi a resposta fornecida pelo programa? O que esta resposta representa? Por que as respostas são diferentes?</p>
+<p>acesse o diretório <strong>src</strong> e execute o comando <code>python VacuumWorld.py</code>. Qual foi a resposta fornecida pelo programa? O que esta resposta representa? Por que as respostas são diferentes?</p>
 </li>
 <li>
 <p>Acesse o código <code>VacuumWorld.py</code>. Quais são os métodos definidos na classe VacuumWorld? Descreve o que você acredita que cada método realiza.</p>
@@ -573,13 +573,14 @@ arquivo <a href="https://github.com/fbarth/introduction_ai/blob/master/code/sear
 </ul>
 <h2 id="aspirador-de-po-em-uma-casa-configuravel">Aspirador de pó em uma casa configurável</h2>
 <p><strong>Que tal implementar um aspirador de pó que consegue atuar em qualquer casa retangular?</strong> </p>
-<p>Utilize como exemplo o arquivo <code>code/search/ProblemSpecificationExample.py</code> para implementar a classe <code>VacuumWorldGeneric.py</code>. O método <code>main</code> da classe <code>VacuumWorldGeneric.py</code> deve receber um arquivo texto que descreve a situação do ambiente e as posições do robô como parâmetros. Por exemplo, para o seguinte ambiente: </p>
+<p>Utilize como exemplo o arquivo <code>src/ProblemSpecificationExample.py</code> para implementar a classe <code>VacuumWorldGeneric.py</code>. O método <code>main</code> da classe <code>VacuumWorldGeneric.py</code> deve receber um arquivo texto que descreve a situação do ambiente e as posições do robô como parâmetros. Por exemplo, para o seguinte ambiente: </p>
 <p><img src="img/mundo_ex_1.png"></p>
 <p>O seguinte arquivo de configuração será entregue: </p>
-<div class="highlight"><pre><span></span><code>L;S;S;S
-L;L;L;L
-S;S;S;S
+<div class="highlight"><pre><span></span><code>0;1;1;1
+0;0;0;0
+1;1;1;1
 </code></pre></div>
+<p>onde <code>0</code> significa <strong>limpo</strong> e <code>1</code> <strong>sujo</strong>.</p>
 <p>E o seguinte comando deve ser executado:</p>
 <div class="highlight"><pre><span></span><code>python VacuumWorldGeneric.py configuracao.txt <span class="m">0</span> <span class="m">0</span>
 </code></pre></div>
@@ -599,9 +600,9 @@ S;S;S;S
 <p>Considere um novo exemplo:</p>
 <p><img src="img/mundo_ex_2.png"></p>
 <p>Para este exemplo o arquivo de configuração precisa ter este conteúdo:</p>
-<div class="highlight"><pre><span></span><code>L;S;S;S
-L;L;S;S
-S;S;S;S
+<div class="highlight"><pre><span></span><code>0;1;1;1
+0;0;1;1
+1;1;1;1
 </code></pre></div>
 <p>E a chamada para o programa: </p>
 <div class="highlight"><pre><span></span><code>python VacuumWorldGeneric.py configuracao.txt <span class="m">1</span> <span class="m">3</span>
@@ -622,7 +623,7 @@ S;S;S;S
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 25, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 29, 2022</span>
       
     
   </small>
