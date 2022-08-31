@@ -36,9 +36,9 @@ Implemente uma classe do tipo *State* que resolve este problema.
 
 ## Formato de entrega
 
-* Para a implementação e entrega deste exercício nós vamos utilizar o [Github Classroom](). 
+* Para a implementação e entrega deste exercício nós vamos utilizar o [Github Classroom](https://classroom.github.com/a/CF3SbB5e). 
 
-* O link para o enunciado é este aqui [](). Através deste link você consegue baixar o repositório e começar a sua codificação. 
+* O link para o enunciado é este aqui [https://classroom.github.com/a/CF3SbB5e](https://classroom.github.com/a/CF3SbB5e). Através deste link você consegue baixar o repositório e começar a sua codificação. 
 
 * **Prazo para a entrega**: 05/09/2022 (segunda-feira) até às 23:00 horas. 
 
