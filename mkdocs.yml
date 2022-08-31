@@ -19,6 +19,10 @@ nav:
     - 'aulas/02_agentes_autonomos/index.md'
     - 'aulas/03_modelagem/index.md'
     - 'aulas/04_configuracao/index.md'
+    - 'aulas/05_busca_cega/index.md'
+    - 'aulas/06_busca_com_custo/index.md'
+    - 'aulas/07_revisao/index.md'
+    - 'aulas/08_heuristica/index.md'
   - 'Referências':
     - 'referencias/03_algoritmos_busca/index.md'
     - 'referencias/04_busca_competitiva/index.md'
