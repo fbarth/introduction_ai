@@ -40,7 +40,7 @@ Implemente uma classe do tipo *State* que resolve este problema.
 
 * O link para o enunciado é este aqui [https://classroom.github.com/a/CF3SbB5e](https://classroom.github.com/a/CF3SbB5e). Através deste link você consegue baixar o repositório e começar a sua codificação. 
 
-* **Prazo para a entrega**: 05/09/2022 (segunda-feira) até às 23:00 horas. 
+* **Prazo para a entrega**: 06/09/2022 (terça-feira) até às 23:00 horas. 
 
 * Lembre-se que você pode fazer uso do atendimento que acontece às segundas das 12:00 às 13:30. 
 
