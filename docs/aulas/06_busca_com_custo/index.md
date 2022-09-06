@@ -44,3 +44,11 @@ Implemente uma classe do tipo *State* que resolve este problema.
 
 * Lembre-se que você pode fazer uso do atendimento que acontece às segundas das 12:00 às 13:30. 
 
+## Rubrica de avaliação
+
+| Conceito | Descrição |
+|:--------:|:----------|
+| A+       | Preencheu os requisitos para A e apresentou uma solução bem projetada e um código bem escrito |
+| A        | Submeteu uma solução que consegue encontrar uma solução para o problema | 
+| D        | Submeteu uma solução, mas a mesma não consegue encontrar uma solução para o problema |   
+
