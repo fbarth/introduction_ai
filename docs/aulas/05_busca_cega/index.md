@@ -70,3 +70,10 @@ Sugere-se olhar o arquivo de testes [src/test_VacuumWorldGeneric.py](https://git
 
 **Prazo para a entrega**: 01/09/2022 até às 23:00 horas.
 
+## Rubrica de avaliação
+
+| Conceito | Descrição |
+|:--------:|:----------|
+| A+       | Preencheu os requisitos para A e apresentou uma solução bem projetada e um código bem escrito |
+| A        | Passou em todos os testes (os testes com número 5 são opcionais) | 
+| D        | Submeteu uma solução, mas a mesma não passou em todos os testes obrigatórios |   
