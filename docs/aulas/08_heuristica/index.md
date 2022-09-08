@@ -49,7 +49,7 @@ Utilize o algoritmo de custo uniforme para encontrar uma solução para os probl
 Perguntas:
 
 * Qual foi o tempo de processamento até a implementação encontrar uma solução? 
-* A árvore de busca gerada pe "inteligente"? 
+* A árvore de busca gerada é "inteligente"? 
 * A solução encontrada é ótima?
 
 ## Usando heurísticas para podar a árvore de busca
