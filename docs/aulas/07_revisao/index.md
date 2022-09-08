@@ -29,7 +29,7 @@
 <img src="img/resumo.png" width="500" height="600" >
 
 ??? warning "Vamos revisar as implementações do problema do aspirador de pó e da banda U2?"
-    Agora ficou mais claro o funcionamento destes algoritmos? 
+    Agora ficou mais claro o funcionamento destas soluções? 
 
 
 ## Referências
