@@ -408,6 +408,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#codificacao-do-mapa" class="md-nav__link">
+    Codificação do mapa
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#usando-heuristicas-para-podar-a-arvore-de-busca" class="md-nav__link">
     Usando heurísticas para podar a árvore de busca
   </a>
@@ -532,6 +539,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#codificacao-do-mapa" class="md-nav__link">
+    Codificação do mapa
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#usando-heuristicas-para-podar-a-arvore-de-busca" class="md-nav__link">
     Usando heurísticas para podar a árvore de busca
   </a>
@@ -602,6 +616,34 @@ a solução apresentada precisa ser ótima?</li>
 <li>A árvore de busca gerada é "inteligente"? </li>
 <li>A solução encontrada é ótima?</li>
 </ul>
+<h2 id="codificacao-do-mapa">Codificação do mapa</h2>
+<p>Considere a definição abaixo como mapa para a sua implementação:</p>
+<div class="highlight"><pre><span></span><code>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">createArea</span><span class="p">():</span>
+        <span class="c1">#</span>
+        <span class="c1"># TODO mover a definicao do mapa de uma forma hard-coded para para leitura</span>
+        <span class="c1"># a partir de um arquivo, similar ao que é feito no metodo createHeuristics()</span>
+        <span class="c1"># </span>
+        <span class="n">Map</span><span class="o">.</span><span class="n">area</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;a&#39;</span><span class="p">:[(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">),(</span><span class="mi">6</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">)],</span>
+            <span class="s1">&#39;b&#39;</span><span class="p">:[(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;h&#39;</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">)],</span>
+            <span class="s1">&#39;c&#39;</span><span class="p">:[(</span><span class="mi">6</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;p&#39;</span><span class="p">)],</span>
+            <span class="s1">&#39;d&#39;</span><span class="p">:[(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;f&#39;</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">)],</span>
+            <span class="s1">&#39;e&#39;</span><span class="p">:[(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;i&#39;</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;f&#39;</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">),(</span><span class="mi">14</span><span class="p">,</span><span class="s1">&#39;m&#39;</span><span class="p">)],</span>
+            <span class="s1">&#39;f&#39;</span><span class="p">:[(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">)],</span>
+            <span class="s1">&#39;g&#39;</span><span class="p">:[(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;f&#39;</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;h&#39;</span><span class="p">)],</span>
+            <span class="s1">&#39;h&#39;</span><span class="p">:[(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;i&#39;</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">),(</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">)],</span>
+            <span class="s1">&#39;i&#39;</span><span class="p">:[(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;h&#39;</span><span class="p">)],</span>
+            <span class="s1">&#39;l&#39;</span><span class="p">:[(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">)],</span>
+            <span class="s1">&#39;k&#39;</span><span class="p">:[(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;l&#39;</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;n&#39;</span><span class="p">),(</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;h&#39;</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">)],</span>
+            <span class="s1">&#39;m&#39;</span><span class="p">:[(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;n&#39;</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;x&#39;</span><span class="p">),(</span><span class="mi">14</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">)],</span>
+            <span class="s1">&#39;n&#39;</span><span class="p">:[(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;m&#39;</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">)],</span>
+            <span class="s1">&#39;o&#39;</span><span class="p">:[(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">)],</span>
+            <span class="s1">&#39;p&#39;</span><span class="p">:[(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">)],</span>
+            <span class="s1">&#39;x&#39;</span><span class="p">:[(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;m&#39;</span><span class="p">)]</span>
+            <span class="p">}</span>
+</code></pre></div>
+<p>O projeto que estamos utilizando para implementar os agentes está em (<a href="https://github.com/Insper/ai_code)[https://github.com/Insper/ai_code">https://github.com/Insper/ai_code)[https://github.com/Insper/ai_code</a>].</p>
 <h2 id="usando-heuristicas-para-podar-a-arvore-de-busca">Usando heurísticas para podar a árvore de busca</h2>
 <details class="warning">
 <summary>O que é uma heurística?</summary>
