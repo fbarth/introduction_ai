@@ -30,7 +30,7 @@ Implemente um agente autônomo que consegue resolver este problema. Antes de ini
 * Qual a estimativa do tamanho do espaço de busca (número de
     estados possíveis)?
 * Que algoritmo de busca pode ser utilizado para resolver este problema considerando que
-a solução apresentada precisa ser ótima. 
+a solução apresentada precisa ser ótima? 
 
 Implemente uma classe do tipo *State* que resolve este problema. 
 
