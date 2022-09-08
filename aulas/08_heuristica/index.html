@@ -369,9 +369,54 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Menor caminho entre duas cidades
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Menor caminho entre duas cidades
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#implementacoes" class="md-nav__link">
+    Implementações
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usando-o-algoritmo-de-custo-uniforme" class="md-nav__link">
+    Usando o algoritmo de custo uniforme
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usando-heuristicas-para-podar-a-arvore-de-busca" class="md-nav__link">
+    Usando heurísticas para podar a árvore de busca
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -466,6 +511,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#implementacoes" class="md-nav__link">
+    Implementações
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usando-o-algoritmo-de-custo-uniforme" class="md-nav__link">
+    Usando o algoritmo de custo uniforme
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usando-heuristicas-para-podar-a-arvore-de-busca" class="md-nav__link">
+    Usando heurísticas para podar a árvore de busca
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -483,13 +557,71 @@
 
 
 <h1 id="menor-caminho-entre-duas-cidades">Menor caminho entre duas cidades</h1>
+<p>Considere o mapa abaixo: </p>
+<p><img src="img/mapa.png"></p>
+<p>Implemente um agente autônomo que consegue resolver este problema. Antes de iniciar a implementação, pense na resposta para as seguintes perguntas: </p>
+<ul>
+<li>O que é relevante representar nos estados do mundo? Como os
+    estados são estruturados (estrutura de dados) e qual o significado
+    dela (dos campos)?</li>
+<li>Mostre como ficam representados os estados inicial e final
+    segundo a representação adotada.</li>
+<li>Quais as operações sobre os estados?
+    (detalhe como cada operação irá alterar os estados e quais as
+    condições para cada operação ser executada)</li>
+<li>Qual a estimativa do tamanho do espaço de busca (número de
+    estados possíveis)?</li>
+<li>Que algoritmo de busca pode ser utilizado para resolver este problema considerando que
+a solução apresentada precisa ser ótima?</li>
+</ul>
+<h2 id="implementacoes">Implementações</h2>
+<p>Implemente um agente, usando o algoritmo de busca em largura, para encontrar um caminho entre a cidade <em>i</em> e <em>o</em>. </p>
+<p>Perguntas:</p>
+<ul>
+<li>Qual foi o tempo de processamento até a implementação encontrar uma solução? </li>
+<li>A árvore de busca gerada é "inteligente"? </li>
+<li>A solução encontrada é ótima? </li>
+</ul>
+<p>Usando a mesma implementação, encontre um caminho entre a cidade <em>b</em> e <em>o</em>. </p>
+<p>Perguntas:</p>
+<ul>
+<li>Qual foi o tempo de processamento até a implementação encontrar uma solução? </li>
+<li>A árvore de busca gerada é "inteligente"? </li>
+<li>A solução encontrada é ótima?</li>
+</ul>
+<h2 id="usando-o-algoritmo-de-custo-uniforme">Usando o algoritmo de custo uniforme</h2>
+<p>Utilize o algoritmo de custo uniforme para encontrar uma solução para os problemas abaixo: </p>
+<ul>
+<li>da cidade <em>i</em> para a cidade <em>o</em></li>
+<li>da cidade <em>b</em> para a cidade <em>o</em></li>
+<li>da cidade <em>i</em> para a cidade <em>x</em></li>
+</ul>
+<p>Perguntas:</p>
+<ul>
+<li>Qual foi o tempo de processamento até a implementação encontrar uma solução? </li>
+<li>A árvore de busca gerada pe "inteligente"? </li>
+<li>A solução encontrada é ótima?</li>
+</ul>
+<h2 id="usando-heuristicas-para-podar-a-arvore-de-busca">Usando heurísticas para podar a árvore de busca</h2>
+<details class="warning">
+<summary>O que é uma heurística?</summary>
+<p>O que é uma heurística? </p>
+</details>
+<details class="warning">
+<summary>Qual é a utilidade de uma heurística?</summary>
+<p>Qual é a utilidade de uma heurística? </p>
+</details>
+<details class="warning">
+<summary>Que heurística podemos usar no problema das cidades?</summary>
+<p>Que heurística podemos usar no problema das cidades? </p>
+</details>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 31, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 8, 2022</span>
       
     
   </small>
