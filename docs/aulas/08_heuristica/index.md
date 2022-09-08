@@ -83,7 +83,7 @@ Considere a definição abaixo como mapa para a sua implementação:
             }
 ```
 
-O projeto que estamos utilizando para implementar os agentes está em (https://github.com/Insper/ai_code)[https://github.com/Insper/ai_code].
+O projeto que estamos utilizando para implementar os agentes está em [https://github.com/Insper/ai_code](https://github.com/Insper/ai_code).
 
 ## Usando heurísticas para podar a árvore de busca
 
