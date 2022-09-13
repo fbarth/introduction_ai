@@ -85,6 +85,42 @@ Considere a definição abaixo como mapa para a sua implementação:
 
 O projeto que estamos utilizando para implementar os agentes está em [https://github.com/Insper/ai_code](https://github.com/Insper/ai_code).
 
+## Entendendo a busca que o algoritmo faz
+
+Para entender a busca que o algoritmo faz, adicione no arquivo `SearchAlgorithms.py`, na classe `BuscaCustoUniforme` a linha `print(n.state.env())` logo depois que `n` é retirado de abertos: 
+
+```python
+class BuscaCustoUniforme (SearchAlgorithm):
+
+    def search (self, initialState):
+        open = []
+        new_n = Node(initialState, None)
+        open.append((new_n, new_n.g))
+        while (len(open) > 0):
+            #list sorted by g()
+            open.sort(key = sortFunction, reverse = True)
+            n = open.pop()[0]
+            print(n.state.env())
+            if (n.state.is_goal()):
+                return n
+            for i in n.state.sucessors():
+                new_n = Node(i,n)
+                open.append((new_n,new_n.g))
+        return None
+```
+
+Ao executar: 
+
+```python
+    state = Map('i', 0, 'i', 'x')
+    algorithm = BuscaCustoUniforme()
+    ts = time.time()
+    result = algorithm.search(state)
+    tf = time.time()
+```
+
+O algoritmo abriu muitos nodos de forma desnecessária? 
+
 ## Usando heurísticas para podar a árvore de busca
 
 ??? warning "O que é uma heurística?"
@@ -97,3 +133,11 @@ O projeto que estamos utilizando para implementar os agentes está em [https://g
     Que heurística podemos usar no problema das cidades? 
  
 
+## Implementando o problemas das cidades com heurística
+
+Faça `pull` do projeto [https://github.com/Insper/ai_code](https://github.com/Insper/ai_code) e termine de codificar o arquivo `Map.py`.
+
+Execute a implementação considerando os algoritmos:
+
+* Busca Gananciosa
+* A* (AEstrela)
