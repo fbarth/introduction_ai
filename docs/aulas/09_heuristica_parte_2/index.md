@@ -32,8 +32,8 @@ O seu agente deve ser capaz de identificar um plano para todos os estados inicia
 
 ## Formato de entrega
 
-* Para a implementação e entrega deste exercício nós vamos utilizar o [Github Classroom](). 
+* Para a implementação e entrega deste exercício nós vamos utilizar o [Github Classroom](https://classroom.github.com/a/0tIfTG6H). 
 
-* O link para o enunciado é este aqui [](). Através deste link você consegue baixar o repositório e começar a sua codificação. 
+* O link para o enunciado é este aqui [https://classroom.github.com/a/0tIfTG6H](https://classroom.github.com/a/0tIfTG6H). Através deste link você consegue baixar o repositório e começar a sua codificação. 
 
 * **Prazo para a entrega**: 15/09/2022 (quinta-feira) até às 23:00 horas.
