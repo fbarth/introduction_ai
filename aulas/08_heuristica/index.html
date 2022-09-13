@@ -415,8 +415,22 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#entendendo-a-busca-que-o-algoritmo-faz" class="md-nav__link">
+    Entendendo a busca que o algoritmo faz
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#usando-heuristicas-para-podar-a-arvore-de-busca" class="md-nav__link">
     Usando heurísticas para podar a árvore de busca
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementando-o-problemas-das-cidades-com-heuristica" class="md-nav__link">
+    Implementando o problemas das cidades com heurística
   </a>
   
 </li>
@@ -546,8 +560,22 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#entendendo-a-busca-que-o-algoritmo-faz" class="md-nav__link">
+    Entendendo a busca que o algoritmo faz
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#usando-heuristicas-para-podar-a-arvore-de-busca" class="md-nav__link">
     Usando heurísticas para podar a árvore de busca
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementando-o-problemas-das-cidades-com-heuristica" class="md-nav__link">
+    Implementando o problemas das cidades com heurística
   </a>
   
 </li>
@@ -644,6 +672,34 @@ a solução apresentada precisa ser ótima?</li>
             <span class="p">}</span>
 </code></pre></div>
 <p>O projeto que estamos utilizando para implementar os agentes está em <a href="https://github.com/Insper/ai_code">https://github.com/Insper/ai_code</a>.</p>
+<h2 id="entendendo-a-busca-que-o-algoritmo-faz">Entendendo a busca que o algoritmo faz</h2>
+<p>Para entender a busca que o algoritmo faz, adicione no arquivo <code>SearchAlgorithms.py</code>, na classe <code>BuscaCustoUniforme</code> a linha <code>print(n.state.env())</code> logo depois que <code>n</code> é retirado de abertos: </p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">BuscaCustoUniforme</span> <span class="p">(</span><span class="n">SearchAlgorithm</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">search</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">initialState</span><span class="p">):</span>
+        <span class="nb">open</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">new_n</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">initialState</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="nb">open</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">new_n</span><span class="p">,</span> <span class="n">new_n</span><span class="o">.</span><span class="n">g</span><span class="p">))</span>
+        <span class="k">while</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">open</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="c1">#list sorted by g()</span>
+            <span class="nb">open</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="n">sortFunction</span><span class="p">,</span> <span class="n">reverse</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="nb">open</span><span class="o">.</span><span class="n">pop</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">env</span><span class="p">())</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">n</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">is_goal</span><span class="p">()):</span>
+                <span class="k">return</span> <span class="n">n</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">n</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">sucessors</span><span class="p">():</span>
+                <span class="n">new_n</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+                <span class="nb">open</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">new_n</span><span class="p">,</span><span class="n">new_n</span><span class="o">.</span><span class="n">g</span><span class="p">))</span>
+        <span class="k">return</span> <span class="kc">None</span>
+</code></pre></div>
+<p>Ao executar: </p>
+<div class="highlight"><pre><span></span><code>    <span class="n">state</span> <span class="o">=</span> <span class="n">Map</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+    <span class="n">algorithm</span> <span class="o">=</span> <span class="n">BuscaCustoUniforme</span><span class="p">()</span>
+    <span class="n">ts</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">algorithm</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+    <span class="n">tf</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</code></pre></div>
+<p>O algoritmo abriu muitos nodos de forma desnecessária? </p>
 <h2 id="usando-heuristicas-para-podar-a-arvore-de-busca">Usando heurísticas para podar a árvore de busca</h2>
 <details class="warning">
 <summary>O que é uma heurística?</summary>
@@ -657,13 +713,20 @@ a solução apresentada precisa ser ótima?</li>
 <summary>Que heurística podemos usar no problema das cidades?</summary>
 <p>Que heurística podemos usar no problema das cidades? </p>
 </details>
+<h2 id="implementando-o-problemas-das-cidades-com-heuristica">Implementando o problemas das cidades com heurística</h2>
+<p>Faça <code>pull</code> do projeto <a href="https://github.com/Insper/ai_code">https://github.com/Insper/ai_code</a> e termine de codificar o arquivo <code>Map.py</code>.</p>
+<p>Execute a implementação considerando os algoritmos:</p>
+<ul>
+<li>Busca Gananciosa</li>
+<li>A* (AEstrela)</li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 8, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2022</span>
       
     
   </small>
