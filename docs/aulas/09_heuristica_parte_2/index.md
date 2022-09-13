@@ -3,7 +3,7 @@
 Considere o problema dos *8-puzzle* discutido em sala de aula. Implemente uma solução para este problema. 
 
 <p align="center">
-<img src="../referencias/03_algoritmos_busca/figuras/fig03-04.png" alt="Grafo" width="400"/>
+<img src="../../referencias/03_algoritmos_busca/figuras/fig03-04.png" alt="Grafo" width="400"/>
 </p>
 
 Implemente um agente autônomo que consegue resolver este problema. Antes de iniciar a implementação, pense na resposta para as seguintes perguntas: 
