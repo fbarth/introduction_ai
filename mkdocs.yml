@@ -23,6 +23,7 @@ nav:
     - 'aulas/06_busca_com_custo/index.md'
     - 'aulas/07_revisao/index.md'
     - 'aulas/08_heuristica/index.md'
+    - 'aulas/09_heuristica_parte_2/index.md'
   - 'Referências':
     - 'referencias/03_algoritmos_busca/index.md'
     - 'referencias/04_busca_competitiva/index.md'
