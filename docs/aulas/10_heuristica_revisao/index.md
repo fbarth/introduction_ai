@@ -4,8 +4,8 @@
 
 * O que são heurísticas **boas**? 
 
-** Heurísticas admissíveis.
-** Heurísticas que não são do "*contra*". 
+    * Heurísticas admissíveis.
+    * Heurísticas que não são do "*contra*". 
 
 ## Atividades: 
 
