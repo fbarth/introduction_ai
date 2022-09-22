@@ -1,7 +1,7 @@
 # Inteligência Artificial - 2022/2
 
 1. [Ementa da disciplina.](ementa.md)
-2. [Plano aula-a-aula da disciplina.](plano_aula.md)
+2. [Plano aula-a-aula da disciplina.](plano_de_aulas.md)
 3. [Critérios de avaliação.](avaliacao.md)
 
 ## Horário das aulas
