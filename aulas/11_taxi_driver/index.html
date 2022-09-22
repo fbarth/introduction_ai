@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://fbarth.github.io/introduction_ai/enunciados/implementacoes_busca_parte2/">
+        <link rel="canonical" href="https://fbarth.github.io/introduction_ai/aulas/11_taxi_driver/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.0">
     
     
       
-        <title>Exercícios sobre busca em espaço de estados: parte 2 - Inteligência Artificial 2022/2</title>
+        <title>Taxi Driver - Inteligência Artificial 2022/2</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercicios-sobre-busca-em-espaco-de-estados-parte-2" class="md-skip">
+        <a href="#taxi-driver" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exercícios sobre busca em espaço de estados: parte 2
+              Taxi Driver
             
           </span>
         </div>
@@ -232,12 +232,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       
       
@@ -260,7 +262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aulas/01_introducao_ia/" class="md-nav__link">
+      <a href="../01_introducao_ia/" class="md-nav__link">
         Introdução à Inteligência Artificial
       </a>
     </li>
@@ -274,7 +276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aulas/02_agentes_autonomos/" class="md-nav__link">
+      <a href="../02_agentes_autonomos/" class="md-nav__link">
         Agentes Autônomos
       </a>
     </li>
@@ -288,7 +290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aulas/03_modelagem/" class="md-nav__link">
+      <a href="../03_modelagem/" class="md-nav__link">
         Modelagem dos problemas
       </a>
     </li>
@@ -302,7 +304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aulas/04_configuracao/" class="md-nav__link">
+      <a href="../04_configuracao/" class="md-nav__link">
         Configuração do ambiente
       </a>
     </li>
@@ -316,7 +318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aulas/05_busca_cega/" class="md-nav__link">
+      <a href="../05_busca_cega/" class="md-nav__link">
         Aspirador de pó em uma casa configurável
       </a>
     </li>
@@ -330,7 +332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aulas/06_busca_com_custo/" class="md-nav__link">
+      <a href="../06_busca_com_custo/" class="md-nav__link">
         Banda U2
       </a>
     </li>
@@ -344,7 +346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aulas/07_revisao/" class="md-nav__link">
+      <a href="../07_revisao/" class="md-nav__link">
         Revisão sobre algoritmos de busca sistemáticos
       </a>
     </li>
@@ -358,7 +360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aulas/08_heuristica/" class="md-nav__link">
+      <a href="../08_heuristica/" class="md-nav__link">
         Menor caminho entre duas cidades
       </a>
     </li>
@@ -372,7 +374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aulas/09_heuristica_parte_2/" class="md-nav__link">
+      <a href="../09_heuristica_parte_2/" class="md-nav__link">
         Problema dos 8-Puzzle
       </a>
     </li>
@@ -386,7 +388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aulas/10_heuristica_revisao/" class="md-nav__link">
+      <a href="../10_heuristica_revisao/" class="md-nav__link">
         Revisão sobre heurística
       </a>
     </li>
@@ -398,11 +400,66 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../aulas/11_taxi_driver/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Taxi Driver
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Taxi Driver
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#entrega-do-exercicio" class="md-nav__link">
+    Entrega do exercício
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#questoes-que-precisam-ser-respondidas-na-documentacao-do-exercicio" class="md-nav__link">
+    Questões que precisam ser respondidas na documentação do exercício
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-da-implementacao-do-taxi-driver" class="md-nav__link">
+    Requisitos da implementação do taxi driver
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -503,29 +560,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#exercicio-soma-1-e-soma-2-com-heuristica" class="md-nav__link">
-    Exercício soma +1 e soma +2 com heurística
+  <a href="#entrega-do-exercicio" class="md-nav__link">
+    Entrega do exercício
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#problema-do-caminho-entre-cidades-com-heuristica" class="md-nav__link">
-    Problema do caminho entre cidades com heurística
+  <a href="#questoes-que-precisam-ser-respondidas-na-documentacao-do-exercicio" class="md-nav__link">
+    Questões que precisam ser respondidas na documentação do exercício
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#problema-do-cavalo-no-tabuleiro-de-xadrez-com-heuristica" class="md-nav__link">
-    Problema do cavalo no tabuleiro de xadrez com heurística
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#as-oito-rainhas" class="md-nav__link">
-    As oito rainhas
+  <a href="#requisitos-da-implementacao-do-taxi-driver" class="md-nav__link">
+    Requisitos da implementação do taxi driver
   </a>
   
 </li>
@@ -542,82 +592,119 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/fbarth/introduction_ai/edit/master/docs/enunciados/implementacoes_busca_parte2.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/fbarth/introduction_ai/edit/master/docs/aulas/11_taxi_driver/index.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="exercicios-sobre-busca-em-espaco-de-estados-parte-2">Exercícios sobre busca em espaço de estados: parte 2</h1>
-<p>Neste documento estão descritos outros problemas relacionados com busca em espaço de estados 
-ou versões mais complexas dos 
-problemas já apresentados na <a href="../implementacoes_busca_parte1/">parte 1</a></p>
-<h2 id="exercicio-soma-1-e-soma-2-com-heuristica">Exercício soma +1 e soma +2 com heurística</h2>
-<p>Quando você mudou o objetivo para 1000, dependendo da máquina que você estava usando, ou você teve problemas de memória,
-ou demorou muito para trazer um resultado ou simplesmente não retornou nenhum resultado até o momento em que você decidiu 
-interromper o processo. </p>
-<p>Isto aconteceu porque o tamanho da árvore é muito grande e os algoritmos de busca cegos (sistemáticos) não fazem uso de nenhum
-recurso para podar a árvore de busca. Por isso que para resolver este problema é necessário fazer uso de algoritmos de busca
-informados. Em outras palavras, algoritmos que fazem uso de heurísticas para escolher o melhor caminho.</p>
+<h1 id="taxi-driver">Taxi Driver</h1>
+<p>Neste exercício você deverá implementar um agente <em>taxi driver</em>. Um agente que é capaz de definir uma sequências de ações para pegar um passageiro em uma posição e deixá-lo em outra possição no mesmo mapa - um mapa que possui obstáculos. </p>
+<p>Por exemplo, considere o seguinte mapa: </p>
+<p><img src="img/mapa_01.png"></p>
+<p>Neste mapa: </p>
+<ul>
+<li>o táxi está na posição [0,0], </li>
+<li>o passageiro está na posição [0,5],</li>
+<li>o passageiro precisa ser levado para a posição [4,0], </li>
+<li>o mapa tem 5 linhas e 7 colunas, e</li>
+<li>existem obstáculos no mapa que estão pintados em cinza.</li>
+</ul>
+<p>Sabemos que o táxi sabe executar as seguintes ações: </p>
+<ul>
+<li>ir para baixo;</li>
+<li>ir para cima;</li>
+<li>ir para esquerda;</li>
+<li>ir para direita; </li>
+<li>pegar o passageiro, e;</li>
+<li>liberar o passageiro. </li>
+</ul>
+<p>Aspectos importantes sobre algumas ações: </p>
 <ul>
 <li>
-<p>Inclua uma heurística (utilize a interface Heuristica) para a resolução do
-problema. Qual a solução apresentada pelo algoritmo ganancioso? Qual é a solução apresentada pelo algoritmo A*?</p>
+<p>a ação <em>pegar o passageiro</em> só pode ser executada se o táxi estiver vazio.</p>
 </li>
 <li>
-<p>Mude a meta para 1001 e repita a execução com os algoritmos ganancioso e A*. A implementação se comportou adequadamente?</p>
+<p>a ação <em>pegar o passageiro</em> pode ser executada em qualquer posição do mapa. No entanto, só vai ter o efeito desejado se o táxi estiver na mesma posição que o passageiro. </p>
 </li>
 <li>
-<p>Qual foi a heurística utilizada?</p>
+<p>a ação <em>liberar o passageiro</em> só pode ser executada se o táxi estiver com o passageiro. </p>
+</li>
+<li>
+<p>a ação <em>liberar o passageiro</em> pode ser executada em qualquer posição do mapa. No entanto, só vai ter o efeito desejado se o táxi estiver na posição onde o passageiro precisa chegar.</p>
 </li>
 </ul>
-<h2 id="problema-do-caminho-entre-cidades-com-heuristica">Problema do caminho entre cidades com heurística</h2>
+<p>Qual é a sequência de ações que o táxi precisa executar para pegar o passageiro e levar até o destino?</p>
+<p>A solução implementada precisa ser capaz de tratar diversas configurações com diversas dimensões. Por exemplo, a figura abaixo ilustra uma configuração possível onde o táxi está pintado de verde porque ele está com o passageiro:</p>
+<p><img src="img/mapa_02.png"> </p>
+<p>A imagem abaixo é um mapa com as mesmas dimensões, mas com um número maior de obstáculos: </p>
+<p><img src="img/mapa_03.png"></p>
+<h2 id="entrega-do-exercicio">Entrega do exercício</h2>
+<ul>
+<li>Este exercício deverá ser feito por equipes com até 3 integrantes.</li>
+<li>O prazo máximo para entrega é 27/09/2022 (terça-feira) até às 18:00 horas.</li>
+<li>A entrega deverá ser feita via <em>Github Classroom</em>. </li>
+<li>O link para o projeto template e para a entrega é <a href="https://classroom.github.com/a/H0ys1-V_">https://classroom.github.com/a/H0ys1-V_</a>.</li>
+<li>Cada equipe deverá entregar a implementação de um <em>taxi driver</em> e um arquivo de documentação (<code>taxi_driver_readme.md</code>).</li>
+</ul>
+<h2 id="questoes-que-precisam-ser-respondidas-na-documentacao-do-exercicio">Questões que precisam ser respondidas na documentação do exercício</h2>
+<p>O arquivo <code>taxi_driver_readme.md</code> deve apresentar os nomes dos integrantes da equipe e deverá responder as seguintes perguntas: </p>
+<ul>
+<li>O que é relevante representar nos estados do mundo? Como os
+    estados são estruturados (estrutura de dados) e qual o significado
+    dela (dos campos)?</li>
+<li>Mostre como ficam representados os estados inicial e final
+    segundo a representação adotada.</li>
+<li>Quais as operações sobre os estados?
+    (detalhe como cada operação irá alterar os estados e quais as
+    condições para cada operação ser executada)</li>
+<li>Que algoritmo de busca foi utilizado para resolver este problema considerando que a solução apresentada precisa ser ótima e que deve ser processada na ordem de segundos, no máximo em poucos minutos?</li>
+<li>A equipe fez uso de heurísticas? Se sim, explique as heurísticas utilizadas.</li>
+<li>Quais são os limites da solução? A solução consegue tratar mapas com que dimensões? Quão complexo pode ser a estrutura de obstáculos? </li>
+</ul>
+<p>Todas as questões precisam estar respondidas para que a equipe tenha no mínimo nota <strong>C</strong> no trabalho como um todo. Se a equipe deixou de responder uma (1) ou duas (2) questões então a nota é <strong>D</strong>, caso contrário <strong>I</strong>. A documentação completa e coerente com a impĺementação é pré-requisito para que a equipe tenha no mínimo nota <strong>C</strong>.   </p>
+<h2 id="requisitos-da-implementacao-do-taxi-driver">Requisitos da implementação do taxi driver</h2>
+<p>A equipe deverá implementar no minímo dois arquivos: um arquivo python com a lógica do agente <em>taxi driver</em> e um arquivo de testes usando <code>pytest</code>. Qualquer entrega que não tenha os dois arquivos, o arquivo da solução e o arquivo de testes, terá nota <strong>I</strong>. </p>
 <ul>
 <li>
-<p>Quanto tempo a solução implementada para o problema do caminho entre cidades levou para encontrar uma
-solução de <em>i</em> até <em>x</em>? Gastou muito mais tempo que as demais buscas? Por que?</p>
+<p>A configuração do mapa deve ser fornecida via arquivo texto. Deve ser um dos parâmetros da implementação. A posição do passageiro, o destino final e a posição do táxi também podem ser fornecidas via arquivo texto ou via parâmetro de chamada da aplicação - este aspecto fica à critério da equipe. </p>
 </li>
 <li>
-<p>Será que é possível criar uma heurística admissível para este problema? Qual seria?</p>
-</li>
-<li>
-<p>O arquivo <code>MapHeuristics.csv</code> tem, de forma implícita, uma heurística codificada. Entenda o significado desta 
-heurística e utilize os dados contigos neste arquivo para definir a função <code>h()</code>. </p>
-</li>
-<li>
-<p>Quais foram os resultados encontrados? Teve alguma diferença? Por que?</p>
+<p>O arquivo de teste deve considerar os cenários ilustrados acima, mais os cenários ilustrados abaixo para que a equipe consiga um <strong>C</strong> como nota: </p>
 </li>
 </ul>
-<h2 id="problema-do-cavalo-no-tabuleiro-de-xadrez-com-heuristica">Problema do cavalo no tabuleiro de xadrez com heurística</h2>
+<p><img src="img/mapa_04.png"></p>
+<p><img src="img/mapa_05.png"></p>
 <ul>
 <li>
-<p>Quais foram os resultados encontrados, incluindo o tempo de processamento, para a 
-execução com os algoritmos de busca cegos?</p>
+<p>Para os dois (2) primeiros cenários a solução precisa encontrar resposta ótima na ordem de segundos. Se isto acontecer, a equipe tem garantida nota <strong>C</strong>. Caso contrário, se a equipe entregou todos os itens solicitados, mas as soluções não são boas o suficiente então a nota será <strong>D</strong>.</p>
 </li>
 <li>
-<p>Será que é possível criar uma heurística para este problema? Caso positivo, use o algoritmo A* ou ganancioso para encontrar 
-respostas para este problema. </p>
+<p>Se a solução encontrar resposta ótima na ordem de segundos para todos os cenários apresentados neste documento então a nota da equipe será <strong>B</strong><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
+</li>
+<li>
+<p>O plano encontrado pelo agente <em>taxi driver</em> pode ser apresentado ao final da execução através de um print em modo texto. Neste caso a nota da equipe será <strong>B</strong>. Para alcançar uma nota <strong>A</strong> ou <strong>A+</strong> a equipe deverá implementar uma forma de visualização onde consegue ver o táxi em movimento e executando as ações. Não precisa ser necessariamente uma interface gráfica. Pode ser algum tipo de visualização dinâmica em modo texto. </p>
+</li>
+<li>
+<p>Outro critério para alcançar a nota <strong>A</strong> ou <strong>A+</strong> é desenvolver um agente capaz de lidar com configurações mais complexas que as apresentadas aqui neste documento. Configurações com dimensões maiores e com um número maior de obstáculos. </p>
 </li>
 </ul>
-<p>Referências que podem ajudar no desenvolvimento da solução:</p>
-<ul>
-<li><a href="https://pt.wikipedia.org/wiki/Problema_do_cavalo">Verbete na Wikipedia sobre o Problema do Cavalo</a></li>
-<li><a href="http://www.din.uem.br/sbpo/sbpo2013/pdf/arq0328.pdf">Costa &amp; Sá. Heurística eficiente para o passeio aberto do cavalo a partir de casas arbitrárias em tabuleiros 
-quadrados. Simpósio Brasileiro de Pesquisa Operacional. 2013</a></li>
-</ul>
-<h2 id="as-oito-rainhas">As oito rainhas</h2>
-<p>Coloque <em>N</em> rainhas em um tabuleiro de xadrez (<em>N x N</em> casas), onde <em>4 &lt;= N &lt;= 10</em>, 
-de maneira que nenhuma rainha ameace outra, i.e., as rainhas não devem compartilhar colunas, 
-linhas ou diagonais do tabuleiro.</p>
-<h1 id="proximas-atividades">Próximas atividades</h1>
-<p>[<a href="../implementacoes_busca_parte3/">Próximas atividades</a>]</p>
+<p><strong>A nota obtida neste exercício será atribuída aos itens <em>básico4</em> e <em>básico5</em> na avaliação</strong>.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>É importante lembrar que a equipe deve satisfazer também os requisitos de documentação para alcançar esta nota.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 17, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 22, 2022</span>
       
     
   </small>
@@ -635,6 +722,42 @@ linhas ou diagonais do tabuleiro.</p>
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../10_heuristica_revisao/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Revisão sobre heurística" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Revisão sobre heurística
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../referencias/03_algoritmos_busca/" class="md-footer__link md-footer__link--next" aria-label="Next: Algoritmos de Busca" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Algoritmos de Busca
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
