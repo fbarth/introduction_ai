@@ -25,6 +25,7 @@ nav:
     - 'aulas/08_heuristica/index.md'
     - 'aulas/09_heuristica_parte_2/index.md'
     - 'aulas/10_heuristica_revisao/index.md'
+    - 'aulas/11_taxi_driver/index.md'
   - 'Referências':
     - 'referencias/03_algoritmos_busca/index.md'
     - 'referencias/04_busca_competitiva/index.md'
