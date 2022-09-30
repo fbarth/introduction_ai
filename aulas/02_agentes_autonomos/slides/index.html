@@ -410,6 +410,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12_csp/" class="md-nav__link">
+        Constraint Satisfaction Problems
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -452,6 +466,20 @@
     <li class="md-nav__item">
       <a href="../../../referencias/03_algoritmos_busca/" class="md-nav__link">
         Algoritmos de Busca
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../referencias/03_csp/" class="md-nav__link">
+        Constraint Satisfaction Problems
       </a>
     </li>
   
@@ -628,9 +656,9 @@
 ::: {.column width="50%"}</p>
 <p>Um agente é qualquer coisa que pode ser visualizada como percebendo o ambiente através de sensores e agindo sobre o ambiente através de atuadores.</p>
 <p>\vspace{0.5cm}</p>
-<p>\begin{center}
+<div class="arithmatex">\[\begin{center}
 \includegraphics[width=0.8\textwidth]{figuras/agent_01.png}
-\end{center}</p>
+\end{center}\]</div>
 <p>:::
 ::: {.column width="50%"}</p>
 <p>\includegraphics[width=1\textwidth]{figuras/agente.png}</p>
@@ -686,15 +714,15 @@
 <h2 id="um-pouco-de-formalismo-segundo-silver-2021">Um pouco de formalismo segundo Silver, 2021</h2>
 <p>:::::::::::::: {.columns}
 ::: {.column width="50%"}</p>
-<p>Um <strong>agente</strong> é um sistema que recebe no tempo $t$ uma observação $O_{t}$ e gera uma saída 
-$A_{t}$. </p>
+<p>Um <strong>agente</strong> é um sistema que recebe no tempo <span class="arithmatex">\(t\)</span> uma observação <span class="arithmatex">\(O_{t}\)</span> e gera uma saída 
+<span class="arithmatex">\(A_{t}\)</span>. </p>
 <p>\vspace{0.2cm}</p>
-<p>Ou seja, um agente é um sistema $A_{t} = \alpha(H_{t})$ que seleciona uma ação $A_{t}$ em um tempo $t$ dado uma história $H_{t} = O_{1},A_{1}, \cdots, O_{t-1},A_{t-1},O_{t}$. </p>
-<p>\begin{eqnarray}
-O_{i} = s \nonumber \ 
-s \in S \nonumber \ 
+<p>Ou seja, um agente é um sistema <span class="arithmatex">\(A_{t} = \alpha(H_{t})\)</span> que seleciona uma ação <span class="arithmatex">\(A_{t}\)</span> em um tempo <span class="arithmatex">\(t\)</span> dado uma história <span class="arithmatex">\(H_{t} = O_{1},A_{1}, \cdots, O_{t-1},A_{t-1},O_{t}\)</span>. </p>
+<div class="arithmatex">\[\begin{eqnarray}
+O_{i} = s \nonumber \\ 
+s \in S \nonumber \\ 
 A_{i} = a \in A \nonumber
-\end{eqnarray}</p>
+\end{eqnarray}\]</div>
 <p>:::
 ::: {.column width="50%"}</p>
 <p>\includegraphics[width=1\textwidth]{figuras/agent_02.png}</p>
@@ -703,15 +731,15 @@ A_{i} = a \in A \nonumber
 <h2 id="_2"></h2>
 <p>:::::::::::::: {.columns}
 ::: {.column width="50%"}</p>
-<p>Um <strong>ambiente</strong> é um sistema que recebe uma ação $A_{t}$ no tempo $t$ e responde com
-uma observação $O_{t+1}$.</p>
+<p>Um <strong>ambiente</strong> é um sistema que recebe uma ação <span class="arithmatex">\(A_{t}\)</span> no tempo <span class="arithmatex">\(t\)</span> e responde com
+uma observação <span class="arithmatex">\(O_{t+1}\)</span>.</p>
 <p>\vspace{0.5cm}</p>
-<p>Ou seja, um ambiente é um sistema $O_{t+1} = \varepsilon(H_{t}, A_{t}, n_{t})$</p>
+<p>Ou seja, um ambiente é um sistema <span class="arithmatex">\(O_{t+1} = \varepsilon(H_{t}, A_{t}, n_{t})\)</span></p>
 <p>\vspace{0.2cm}</p>
 <ul>
-<li>$H_{t}$ é um estado que acumula toda a história;</li>
-<li>$A_{t}$ é a última ação do agente;</li>
-<li>$n_{t}$ <em>potencialmente</em> é uma fonte de aleatoriedade. </li>
+<li><span class="arithmatex">\(H_{t}\)</span> é um estado que acumula toda a história;</li>
+<li><span class="arithmatex">\(A_{t}\)</span> é a última ação do agente;</li>
+<li><span class="arithmatex">\(n_{t}\)</span> <em>potencialmente</em> é uma fonte de aleatoriedade. </li>
 </ul>
 <p>:::
 ::: {.column width="50%"}</p>
@@ -836,6 +864,12 @@ uma observação $O_{t+1}$.</p>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.0.0/js-yaml.min.js"></script>
       
         <script src="../../../js/markdown-enhancer.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

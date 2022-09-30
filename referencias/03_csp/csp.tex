@@ -1,0 +1,127 @@
+\documentclass[landscape,pdftex]{jomislides}
+
+\slidesmag{5} % escala, qto maior maiores serão as letras/figras/etc.
+
+%\centerslidesfalse
+
+\usepackage{algorithmic}
+
+%
+% Slides
+% ======
+%
+
+
+\begin{document}
+
+%\input{autorHeaders}
+
+\title{Constraint Satisfaction Problems} 
+\author{Fabrício Barth}
+\institution{Insper}
+\date{Outubro de 2022}
+
+\SlideHeader{}
+            {Inteligência Artificial}
+\SlideFooter{\theslidepartheading $\;$ --- $\;$ \theslideheading}
+            {\theslide}
+
+\vpagecolor[white]{white}
+
+
+\subtitle{}
+
+\maketitle
+
+\begin{Slide}{\textbf{Problema das N rainhas}}
+	
+		Dado um tabuleiro $N \times N$, é possível encontrar uma configuração onde $N$ rainhas no tabuleiro não conseguem atacar nenhuma das outras rainhas no mesmo tabuleiro?
+		
+		\begin{center}
+			\includegraphics[width=.4\textwidth]{figuras/fig03-05.pdf}
+		\end{center}
+		
+\end{Slide}
+
+
+\begin{Slide}{Introdução}
+	
+	Até agora vimos diversos problemas de planejamento. Problemas onde o agente precisava sair de um estado e chegar em outro, ou seja, sequenciar um conjunto de ações para alcançar um objetivo. 
+	
+	No entanto, existem outras classes de problemas onde o objetivo não está em encontrar uma sequência de ações, mas sim \textbf{encontrar um ou mais estados que satisfazem um conjunto de restrições}.
+
+\end{Slide}
+
+\begin{Slide}{Algoritmo \textbf{Subida da Montanha}}
+  \textbf{Idéia}: escolher sempre um sucessor melhor
+
+(``\textit{subir sempre}'').
+ 
+\begin{algorithmic} 
+\STATE \textbf{function} BSM-1(Estado $inicial$): Estado
+\STATE Estado $atual \gets inicial$
+\LOOP
+    \STATE $prox \gets $ melhor sucessor de $atual$ (segundo $h$)
+    \IF[sem sucessor melhor]{$h(prox) \geq h(atual)$}
+       \STATE \textbf{return} $atual$
+    \ENDIF
+    \STATE $atual \gets prox$
+\ENDLOOP
+\end{algorithmic}
+\end{Slide}
+
+\begin{Slide}{\textbf{Análise} do algoritmo BSM}
+  \begin{itemize}
+  \item Não mantém a árvore (logo, não pode retornar o caminho que
+    usou para chegar à meta).
+
+  \item Completo:  \textbf{não} (problema de \emph{máximos locais})
+  \item Ótimo:  não se aplica
+  \item Tempo:  \textbf{?}
+  \item Espaço:  \textbf{nada}!
+  \end{itemize}
+\end{Slide}
+
+
+\begin{Slide}{Algoritmo \textbf{Subida da Montanha Estocástico}}
+{\footnotesize
+\begin{algorithmic} 
+\STATE \textbf{function} BSM-2(Estado $inicial$): Estado
+\STATE Estado $atual \gets inicial$
+\LOOP
+    \STATE $prox \gets $ melhor sucessor de $atual$ (segundo $h$)
+    \IF[sem sucessor melhor]{$h(prox) \geq h(atual)$}
+       \IF{$atual$.\textbf{éMeta}()}
+          \STATE \textbf{return} $atual$
+       \ELSE
+          \STATE $atual \gets$ estado gerado aleatóriamente
+       \ENDIF
+    \ELSE
+       \STATE $atual \gets prox$
+    \ENDIF
+\ENDLOOP
+\end{algorithmic}
+}
+\end{Slide}
+
+
+\begin{Slide}{\textbf{Análise} do algoritmo BSM Estocástico}
+  \begin{itemize}
+  \item Completo:  \textbf{sim} (se a geração de estados
+    aleatórios tiver uma distribuição uniforme)
+  \item Ótimo:  não se aplica
+  \item Tempo:  \textbf{?}
+  \item Espaço:  \textbf{nada}!
+  \end{itemize}
+\end{Slide}
+
+
+\begin{Slide}{Material de \textbf{consulta}}
+  \begin{itemize}
+  \item Capítulo 5 do livro do Russell \& Norvig
+  \end{itemize}
+\end{Slide}
+
+
+\end{document}
+
