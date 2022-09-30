@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.6.28)  30 SEP 2022 16:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.6.28)  30 SEP 2022 17:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**busca_versaoFabricio.tex
-(./busca_versaoFabricio.tex
+**csp.tex
+(./csp.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21> (./jomislides.cls
 Document Class: jomislides 2002/05/23
@@ -547,8 +547,8 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count322
 \l__pdf_internal_box=\box108
 )
-(./busca_versaoFabricio.aux)
-\openout1 = `busca_versaoFabricio.aux'.
+(./csp.aux)
+\openout1 = `csp.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
@@ -568,8 +568,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
-
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count323
 \scratchdimen=\dimen265
@@ -608,9 +607,9 @@ LaTeX Info: Redefining \ref on input line 15.
 LaTeX Info: Redefining \pageref on input line 15.
 LaTeX Info: Redefining \nameref on input line 15.
 
-(./busca_versaoFabricio.out) (./busca_versaoFabricio.out)
+(./csp.out) (./csp.out)
 \@outlinefile=\write4
-\openout4 = `busca_versaoFabricio.out'.
+\openout4 = `csp.out'.
 
 
 Overfull \hbox (1.83334pt too wide) has occurred while \output is active
@@ -649,6 +648,12 @@ en already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.34 \maketitle
                {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+<figuras/fig03-05.pdf, id=45, 206.7725pt x 206.7725pt>
+File: figuras/fig03-05.pdf Graphic file (type pdf)
+<use figuras/fig03-05.pdf>
+Package pdftex.def Info: figuras/fig03-05.pdf  used on input line 41.
+(pdftex.def)             Requested size: 98.7566pt x 98.75746pt.
+
 Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [] 
  []
@@ -660,12 +665,12 @@ Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 
 [2
 
-pdfTeX warning (ext4): destination with the same identifier (name{2.-1}) has be
-en already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{2.0}) has bee
+n already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.43 \end{PartSlide}
-                    ]
+l.44 \end{Slide}
+                 <./figuras/fig03-05.pdf>]
 Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [] 
  []
@@ -681,8 +686,23 @@ pdfTeX warning (ext4): destination with the same identifier (name{3.0}) has bee
 n already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.58 \end{Slide}
+l.53 \end{Slide}
                 ]
+LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <10> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 58.
+LaTeX Font Info:    Trying to load font information for OMS+cmss on input line 
+65.
+LaTeX Font Info:    No file OMScmss.fd. on input line 65.
+
+
+LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 65.
+
+
+LaTeX Warning: Slide 4 overfull by 4.62303pt on input line 71.
+
+
 Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [] 
  []
@@ -698,7 +718,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{4.0}) has bee
 n already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.72 \end{Slide}
+l.71 \end{Slide}
                 ]
 Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [] 
@@ -715,13 +735,19 @@ pdfTeX warning (ext4): destination with the same identifier (name{5.0}) has bee
 n already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.93   \begin{center}
-                     ]
-<figuras/fig03-02.pdf, id=171, 256.96pt x 224.84pt>
-File: figuras/fig03-02.pdf Graphic file (type pdf)
-<use figuras/fig03-02.pdf>
-Package pdftex.def Info: figuras/fig03-02.pdf  used on input line 94.
-(pdftex.def)             Requested size: 172.82594pt x 151.22523pt.
+l.83 \end{Slide}
+                ]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 89.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 89.
+
+
+LaTeX Warning: Slide 6 overfull by 9.01187pt on input line 105.
+
+
+Overfull \vbox (4.11845pt too high) has occurred while \output is active []
+
 
 Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [] 
@@ -732,13 +758,14 @@ Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [][] 
  []
 
-[6 <./figuras/fig03-02.pdf>]
-<figuras/fig03-06.pdf, id=190, 601.24625pt x 289.08pt>
-File: figuras/fig03-06.pdf Graphic file (type pdf)
-<use figuras/fig03-06.pdf>
-Package pdftex.def Info: figuras/fig03-06.pdf  used on input line 100.
-(pdftex.def)             Requested size: 246.8953pt x 118.70882pt.
+[6
 
+pdfTeX warning (ext4): destination with the same identifier (name{6.0}) has bee
+n already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.105 \end{Slide}
+                 ]
 Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [] 
  []
@@ -748,19 +775,14 @@ Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [][] 
  []
 
-[7 <./figuras/fig03-06.pdf>]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 107.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 107.
+[7
 
-
-LaTeX Warning: Slide 8 overfull by 14.46861pt on input line 125.
-
-
-Overfull \vbox (5.24603pt too high) has occurred while \output is active []
-
-
+pdfTeX warning (ext4): destination with the same identifier (name{7.0}) has bee
+n already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.116 \end{Slide}
+                 ]
 Overfull \hbox (1.83334pt too wide) has occurred while \output is active
 [] 
  []
@@ -776,645 +798,43 @@ pdfTeX warning (ext4): destination with the same identifier (name{8.0}) has bee
 n already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.125 \end{Slide}
-                 ]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[9
-
-pdfTeX warning (ext4): destination with the same identifier (name{9.0}) has bee
-n already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.138 \end{Slide}
-                 ]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[10
-
-pdfTeX warning (ext4): destination with the same identifier (name{10.0}) has be
-en already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.153     \newpage
-                  ]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[11]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[12
-
-pdfTeX warning (ext4): destination with the same identifier (name{12.0}) has be
-en already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.177     \newpage
-                  ]
-<figuras/fig03-04.pdf, id=251, 454.69875pt x 227.85126pt>
-File: figuras/fig03-04.pdf Graphic file (type pdf)
-<use figuras/fig03-04.pdf>
-Package pdftex.def Info: figuras/fig03-04.pdf  used on input line 181.
-(pdftex.def)             Requested size: 172.82594pt x 86.60522pt.
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[13 <./figuras/fig03-04.pdf>]
-<figuras/mapa.pdf, id=298, 245.91875pt x 215.80624pt>
-File: figuras/mapa.pdf Graphic file (type pdf)
-<use figuras/mapa.pdf>
-Package pdftex.def Info: figuras/mapa.pdf  used on input line 188.
-(pdftex.def)             Requested size: 197.51698pt x 173.33673pt.
-
-
-LaTeX Warning: Slide 14 overfull by 3.79695pt on input line 191.
-
-
-Overfull \vbox (2.05865pt too high) has occurred while \output is active []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[14 <./figuras/mapa.pdf>]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[15
-
-pdfTeX warning (ext4): destination with the same identifier (name{15.-1}) has b
-een already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.201 \end{PartSlide}
-                     ]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[16
-
-pdfTeX warning (ext4): destination with the same identifier (name{16.0}) has be
-en already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.218 \end{Slide}
-                 ]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[17
-
-pdfTeX warning (ext4): destination with the same identifier (name{17.0}) has be
-en already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.229 \end{Slide}
-                 ]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[18
-
-pdfTeX warning (ext4): destination with the same identifier (name{18.0}) has be
-en already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.246 \end{Slide}
-                 ]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[19
-
-pdfTeX warning (ext4): destination with the same identifier (name{19.0}) has be
-en already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.259 \end{Slide}
-                 ]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[20
-
-pdfTeX warning (ext4): destination with the same identifier (name{20.0}) has be
-en already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.277 \end{Slide}
-                 ]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[21
-
-pdfTeX warning (ext4): destination with the same identifier (name{21.0}) has be
-en already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.296 \end{Slide}
-                 ]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[22
-
-pdfTeX warning (ext4): destination with the same identifier (name{22.0}) has be
-en already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.311 \end{Slide}
-                 ]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[23
-
-pdfTeX warning (ext4): destination with the same identifier (name{23.0}) has be
-en already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.322 		\newpage
-                ]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[24]
-
-LaTeX Warning: Slide 25 overfull by 6.61627pt on input line 358.
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[25
-
-pdfTeX warning (ext4): destination with the same identifier (name{25.0}) has be
-en already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.358 \end{Slide}
-                 ]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[26
-
-pdfTeX warning (ext4): destination with the same identifier (name{26.0}) has be
-en already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.375 \end{Slide}
-                 ]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[27
-
-pdfTeX warning (ext4): destination with the same identifier (name{27.0}) has be
-en already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.390 \end{Slide}
-                 ]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[28
-
-pdfTeX warning (ext4): destination with the same identifier (name{28.0}) has be
-en already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.401 \end{Slide}
-                 ]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[29
-
-pdfTeX warning (ext4): destination with the same identifier (name{29.0}) has be
-en already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.455 \end{Slide}
-                 ]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[30
-
-pdfTeX warning (ext4): destination with the same identifier (name{30.0}) has be
-en already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.462 \end{Slide}
-                 ]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[31
-
-pdfTeX warning (ext4): destination with the same identifier (name{31.0}) has be
-en already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.480 \end{Slide}
-                 ]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[32
-
-pdfTeX warning (ext4): destination with the same identifier (name{32.-1}) has b
-een already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.489 \end{PartSlide}
-                     ]
-File: figuras/mapa.pdf Graphic file (type pdf)
-<use figuras/mapa.pdf>
-Package pdftex.def Info: figuras/mapa.pdf  used on input line 493.
-(pdftex.def)             Requested size: 148.13867pt x 130.00502pt.
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[33
-
-pdfTeX warning (ext4): destination with the same identifier (name{33.0}) has be
-en already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.496 \end{Slide}
-                 ]
-
-LaTeX Warning: Slide 34 overfull by 2.90758pt on input line 518.
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[34
-
-pdfTeX warning (ext4): destination with the same identifier (name{34.0}) has be
-en already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.518 \newpage
-              ]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[35]
-
-LaTeX Warning: Slide 36 overfull by 4.37427pt on input line 550.
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[36
-
-pdfTeX warning (ext4): destination with the same identifier (name{36.0}) has be
-en already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.550 \end{Slide}
-                 ]
-LaTeX Font Info:    Trying to load font information for OMS+cmss on input line 
-556.
-LaTeX Font Info:    No file OMScmss.fd. on input line 556.
-
-
-LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 556.
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[37
-
-pdfTeX warning (ext4): destination with the same identifier (name{37.0}) has be
-en already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.567 \end{Slide}
-                 ]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 570.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 570.
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 570.
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[38
-
-pdfTeX warning (ext4): destination with the same identifier (name{38.0}) has be
-en already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.585 \end{Slide}
-                 ]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[39
-
-pdfTeX warning (ext4): destination with the same identifier (name{39.0}) has be
-en already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.597 \end{Slide}
-                 ]
-File: figuras/fig03-04.pdf Graphic file (type pdf)
-<use figuras/fig03-04.pdf>
-Package pdftex.def Info: figuras/fig03-04.pdf  used on input line 606.
-(pdftex.def)             Requested size: 172.82594pt x 86.60522pt.
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[40
-
-pdfTeX warning (ext4): destination with the same identifier (name{40.0}) has be
-en already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.608     \newpage
-                  ]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[41]
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[] 
- []
-
-
-Overfull \hbox (1.83334pt too wide) has occurred while \output is active
-[][] 
- []
-
-[42
-
-pdfTeX warning (ext4): destination with the same identifier (name{42.0}) has be
-en already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.647 \end{Slide}
+l.123 \end{Slide}
                  ]
 
 *******************************************************
 ***** !! PRINT THIS DOCUMENT IN LANDSCAPE MODE !! *****
 *******************************************************
-(./busca_versaoFabricio.aux)
+(./csp.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: File `busca_versaoFabricio.out' has not changed.
-(rerunfilecheck)             Checksum: 24E419984066A7D1E8D08C7D5A90A6A9;6050.
+Package rerunfilecheck Info: File `csp.out' has not changed.
+(rerunfilecheck)             Checksum: 3D51DD277210F61823A95F6B312A444D;1459.
  ) 
 Here is how much of TeX's memory you used:
- 17112 strings out of 480247
- 292187 string characters out of 5896151
- 583321 words of memory out of 5000000
- 34637 multiletter control sequences out of 15000+600000
- 475596 words of font info for 49 fonts, out of 8000000 for 9000
+ 16941 strings out of 480247
+ 290007 string characters out of 5896151
+ 583226 words of memory out of 5000000
+ 34586 multiletter control sequences out of 15000+600000
+ 474739 words of font info for 46 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 94i,16n,103p,457b,777s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 94i,16n,103p,440b,809s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss
-17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on busca_versaoFabricio.pdf (42 pages, 257263 bytes).
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8
+.pfb>
+Output written on csp.pdf (8 pages, 137431 bytes).
 PDF statistics:
- 623 PDF objects out of 1000 (max. 8388607)
- 530 compressed objects within 6 object streams
- 162 named destinations out of 1000 (max. 500000)
- 293 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 180 PDF objects out of 1000 (max. 8388607)
+ 143 compressed objects within 2 object streams
+ 47 named destinations out of 1000 (max. 500000)
+ 70 words of extra memory for PDF output out of 10000 (max. 10000000)
 
