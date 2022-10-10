@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://fbarth.github.io/introduction_ai/aulas/09_heuristica_parte_2/">
+        <link rel="canonical" href="https://fbarth.github.io/introduction_ai/aulas/13_jogos/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.0">
     
     
       
-        <title>Problema dos 8-Puzzle - Inteligência Artificial 2022/2</title>
+        <title>Jogos de tabuleiro e busca competitiva - Inteligência Artificial 2022/2</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#problema-dos-8-puzzle" class="md-skip">
+        <a href="#jogos-de-tabuleiro-e-busca-competitiva" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Problema dos 8-Puzzle
+              Jogos de tabuleiro e busca competitiva
             
           </span>
         </div>
@@ -372,52 +372,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Problema dos 8-Puzzle
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../09_heuristica_parte_2/" class="md-nav__link">
         Problema dos 8-Puzzle
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#formato-de-entrega" class="md-nav__link">
-    Formato de entrega
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -469,11 +428,52 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../13_jogos/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Jogos de tabuleiro e busca competitiva
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Jogos de tabuleiro e busca competitiva
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#questionario" class="md-nav__link">
+    Questionário
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -602,8 +602,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#formato-de-entrega" class="md-nav__link">
-    Formato de entrega
+  <a href="#questionario" class="md-nav__link">
+    Questionário
   </a>
   
 </li>
@@ -620,75 +620,32 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/fbarth/introduction_ai/edit/master/docs/aulas/09_heuristica_parte_2/index.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/fbarth/introduction_ai/edit/master/docs/aulas/13_jogos/index.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="problema-dos-8-puzzle">Problema dos 8-Puzzle</h1>
-<p>Considere o problema dos <em>8-puzzle</em> discutido em sala de aula. Implemente uma solução para este problema. </p>
-<p align="center">
-<img src="../../referencias/03_algoritmos_busca/figuras/fig03-04.png" alt="Grafo" width="400"/>
-</p>
-
-<p>Implemente um agente autônomo que consegue resolver este problema. Antes de iniciar a implementação, pense na resposta para as seguintes perguntas: </p>
-<ul>
-<li>O que é relevante representar nos estados do mundo? Como os
-    estados são estruturados (estrutura de dados) e qual o significado
-    dela (dos campos)?</li>
-<li>Mostre como ficam representados os estados inicial e final
-    segundo a representação adotada.</li>
-<li>Quais as operações sobre os estados?
-    (detalhe como cada operação irá alterar os estados e quais as
-    condições para cada operação ser executada)</li>
-<li>Qual a estimativa do tamanho do espaço de busca (número de
-    estados possíveis)?</li>
-<li>Que algoritmo de busca pode ser utilizado para resolver este problema considerando que
-a solução apresentada precisa ser ótima? </li>
-</ul>
-<p>A entrega da sua implementação deverá ter 1 arquivo chamado <code>Puzzle8.py</code> que implementa a interface <code>State</code> e que deve passar por TODOS os testes especificados em <code>test_8_puzzle.py</code>. </p>
-<p>O seu agente deve ser capaz de identificar um plano para todos os estados iniciais descritos como fáceis e difícieis no arquivo de testes. Para os estados descritos como impossível o agente precisa retornar a mensagem <em>"Nao achou solucao"</em>. Deve-se considerar o estado <em>goal</em> em formato caracol, como apresentado abaixo:</p>
-<table>
-<thead>
-<tr>
-<th align="center">1</th>
-<th align="center">2</th>
-<th align="center">3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">8</td>
-<td align="center"></td>
-<td align="center">4</td>
-</tr>
-<tr>
-<td align="center">7</td>
-<td align="center">6</td>
-<td align="center">5</td>
-</tr>
-</tbody>
-</table>
-<h2 id="formato-de-entrega">Formato de entrega</h2>
-<ul>
-<li>
-<p>Para a implementação e entrega deste exercício nós vamos utilizar o <a href="https://classroom.github.com/a/0tIfTG6H">Github Classroom</a>. </p>
-</li>
-<li>
-<p>O link para o enunciado é este aqui <a href="https://classroom.github.com/a/0tIfTG6H">https://classroom.github.com/a/0tIfTG6H</a>. Através deste link você consegue baixar o repositório e começar a sua codificação. </p>
-</li>
-<li>
-<p><strong>Prazo para a entrega</strong>: 15/09/2022 (quinta-feira) até às 23:00 horas.</p>
-</li>
-</ul>
+<h1 id="jogos-de-tabuleiro-e-busca-competitiva">Jogos de tabuleiro e busca competitiva</h1>
+<p>Leia e execute os exercícios propostos em <a href="http://fbarth.net.br/Connect4-Python/">Implementando um jogador para Liga4</a>.</p>
+<p>Este material apresenta conceitos e algoritmos relacionados com a implementação de agentes autônomos que atuam em ambiente competitivo de soma zero e sem variável aleatória. </p>
+<h2 id="questionario">Questionário</h2>
+<p>Depois de feito o tutorial acima, responda as seguintes perguntas: </p>
+<ol>
+<li>O que é um ambiente competitivo de soma zero?</li>
+<li>Qual o objetivo do algoritmo Min-Max? Em outras palavras, por que um agente autônomo que atua em um ambiente competitivo deve usar o algoritmo Min-Max?</li>
+<li>O que é função de utilidade? Por que utilizar funções de utilidade? </li>
+<li>Qual é a relação da profundidade da árvore de busca do Min-Max com o desempenho final do agente? Existe correlação? Justifique a sua resposta. </li>
+<li>Faça um resumo, com poucos parágrafos, sobre como o <a href="https://stockfishchess.org/">Stockfish</a> é implementado.</li>
+</ol>
+<p>Entregue este questionário respondido, via blackboard, até o início da próxima aula. Esta atividade vale 0.5 pontos da média final da disciplina. </p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 10, 2022</span>
       
     
   </small>
@@ -711,7 +668,7 @@ a solução apresentada precisa ser ótima? </li>
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../08_heuristica/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Menor caminho entre duas cidades" rel="prev">
+        <a href="../12_csp/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Constraint Satisfaction Problems" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -720,20 +677,20 @@ a solução apresentada precisa ser ótima? </li>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Menor caminho entre duas cidades
+              Constraint Satisfaction Problems
             </div>
           </div>
         </a>
       
       
         
-        <a href="../10_heuristica_revisao/" class="md-footer__link md-footer__link--next" aria-label="Next: Revisão sobre heurística" rel="next">
+        <a href="../../referencias/03_algoritmos_busca/" class="md-footer__link md-footer__link--next" aria-label="Next: Algoritmos de Busca" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Revisão sobre heurística
+              Algoritmos de Busca
             </div>
           </div>
           <div class="md-footer__button md-icon">
