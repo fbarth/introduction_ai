@@ -29,4 +29,10 @@ Para esta atividade vamos utilizar o projeto [AI Code](https://github.com/Insper
 
 * Teste a solução com o algoritmo **SubidaMontanhaEstocastico** também para todos os cenários. Qual foi a diferença no comportamento?
 
+## Discussão e fechamento da aula
+
 * Você sabe explicar o motivo das respostas fornecidas pelos algoritmos **SubidaMontanha** e **SubidaMontanhaEstocastico**? 
+
+??? warning "Mínimo ou máximo local"
+    O que é mínimo ou máximo local e quais são as suas consequências? 
+

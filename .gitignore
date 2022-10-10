@@ -37,3 +37,6 @@ students/*-report.html
 
 .credentials
 .gh-credentials
+
+.pytest_cache
+notas.xlsx
