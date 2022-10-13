@@ -83,17 +83,15 @@ Ao final do projeto, o grupo de alunos deverá entregar dois artefatos:
 
 ### Documentação e questões referentes ao projeto
 
-1. Que algoritmo deve ser utilizado para desenvolver um agente jogador de *Connect4 PopOut* vencedor? Deve-se utilizar uma implementação de Min-Max com poda alpha-beta? Se sim, qual a profundidade que deverá ser utilizada para evitar processamentos superiores a 10 segundos por jogada? Qual a função de utilidade que deve ser utilizada? 
+1. Que algoritmo deve ser utilizado para desenvolver um agente jogador de *Connect4 PopOut* vencedor? Deve-se utilizar uma implementação de Min-Max com poda alpha-beta? Se sim, qual a profundidade que deverá ser utilizada para evitar processamentos superiores a 5 segundos por jogada? Qual a função de utilidade que deve ser utilizada? 
 
-2. O seu jogador faz uso de alguma base de conhecimento? Se sim, como ela é utilizada durante o processo de tomada de decisão? 
+1. O seu jogador faz uso de alguma base de conhecimento? Se sim, como ela é utilizada durante o processo de tomada de decisão? 
 
-3. Foi utilizada alguma função de utilidade não definida manualmente, por exemplo, alguma função de utilidade gerada a partir de um processo de aprendizagem de máquina supervisionado? Se sim, como é que foi o treinamento desta função de utilidade? Como foi feita a integração desta função de utilidade com o restante do código? 
+1. Qual a sua expectativa com relação ao desempenho do seu agente? Você acredita que ele irá desempenhar bem na competição? Por que? Você executou testes contra outros jogadores? Qual foram os resultados? 
 
-4. Qual a sua expectativa com relação ao desempenho do seu agente? Você acredita que ele irá desempenhar bem na competição? Por que? Você executou testes contra outros jogadores? Qual foram os resultados? 
+1. Quais foram as principais referências utilizadas para a implementação do seu jogador? 
 
-5. Quais foram as principais referências utilizadas para a implementação do seu jogador? 
-
-6. Existem diferenças significativas entre um jogador de *Connect4* e um jogador de *Connect4 PopOut* em termos de árvore de busca e função de avaliação? É possível utilizar o jogador implementado para o *Connect4 PopOut* em competições de *Connect4* sem muitas modificações? 
+1. Existem diferenças significativas entre um jogador de *Connect4* e um jogador de *Connect4 PopOut* em termos de árvore de busca e função de avaliação? É possível utilizar o jogador implementado para o *Connect4 PopOut* em competições de *Connect4* sem muitas modificações? 
 
 A documentação entregue precisa responder todas as perguntas acima. As respostas para as perguntas de uma forma geral precisam ser baseadas em evidências, de preferência dados vindos de experimentos. Principalmente, as respostas para as perguntas 4 e 6.
 
