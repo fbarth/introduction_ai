@@ -5,14 +5,14 @@ Segue abaixo plano de aula revisado:
 
 | Data   | Conteúdo |
 |:-------|:---------|
-| 18/10  | Aula studio para implementação de agente de Liga4-popout. |
-| 20/10  | Aula studio para implementação de agente de Liga4-popout. |
-| 25/10  | Apresentação dos resultados da competição e início da aula sobre Aprendizagem por Reforço. |
-| 27/10  | Aprendizagem por reforço. |
+| 18/10  | Aula studio para implementação de agente de Liga4-popout.|
+| 20/10  | Aula studio para implementação de agente de Liga4-popout.|
+| 25/10  | Aula studio para implementação de agente de Liga4-popout e entrega.|
+| 27/10  | Apresentação dos resultados da competição e início da aula sobre Aprendizagem por Reforço.|
 | 01/11  | Não teremos aula. |
-| 03/11  | Quais são os limites e detalhes do algoritmo Q-Learning? Implementação de agentes autônomos usando o algoritmo Q-Learning.|
-| 08/11  | Quais são os limites e detalhes do algoritmo Q-Learning? Implementação de agentes autônomos usando o algoritmo Q-Learning.|
-| 10/11  | Deep Q-Learning. |
+| 03/11  | Implementação de agentes autônomos usando o algoritmo Q-Learning.|
+| 08/11  | Implementação de agentes autônomos usando o algoritmo Q-Learning.|
+| 10/11  | Implementação de agentes autônomos usando o algoritmo Q-Learning.|
 | 15/11  | FERIADO. |
 | 17/11  | Apresentações sobre Tópicos de IA.|
 | 22/11  | Apresentações sobre Tópicos de IA.|
