@@ -38,7 +38,7 @@ Para informar que a decisão do agente é colocar um disco no topo então deve-s
 
 Ao implementar este agente você deve considerar algumas restrições:
 
-* A duração de nenhum movimento deverá ultrapassar 5 segundos. 
+* A duração de nenhum movimento deverá ultrapassar **10 segundos**. 
 
 * O seu agente não deverá fazer nenhuma jogada inválida: 
     * jogar um disco em uma coluna que não existe; 
