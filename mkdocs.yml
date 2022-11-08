@@ -30,6 +30,8 @@ nav:
     - 'aulas/13_jogos/index.md'
     - 'aulas/14_competicao/index.md'
     - 'aulas/15_rl/index.md'
+    - 'aulas/15_rl/exercicio1.md'
+    - 'aulas/15_rl/exercicio2.md'
     - 'aulas/99_topicos/index.md'
   - 'Referências':
     - 'referencias/03_algoritmos_busca/index.md'
