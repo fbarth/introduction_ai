@@ -12,7 +12,6 @@ Os objetivos de aprendizagem desta disciplina serão avaliados através das segu
 O critério para aprovação é:
 
 * nota final superior ou igual a cinco (5);
-* ter feito e entregue no mínimo 7 exercícios dos 9 propostos;
 * e 75% de frequência mínima nas aulas. 
 
 ## Conversão de conceito para valor numérico
