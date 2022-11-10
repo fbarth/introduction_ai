@@ -32,6 +32,6 @@ Para responder esta pergunta você deverá:
 
 * Você deverá entregar todos os artefatos (código, relatórios) em um único repositório no GitHub Classroom: [https://classroom.github.com/a/5-Wc0Frv](https://classroom.github.com/a/5-Wc0Frv). 
 
-* Este trabalho é individual e vale 1.5 pontos na média. 
+* Este trabalho é **individual** e vale **1.5 pontos na média**. 
 
 * A data de entrega é **23/11/2022** até às 18 horas.
