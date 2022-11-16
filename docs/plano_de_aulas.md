@@ -7,11 +7,12 @@ Cada equipe terá 20 minutos para apresentar o seu tema. Depois disso teremos 10
 | 17/11 (15:45 - 16:15) | Inteligência Artificial em videogames [Bruno Rodrigues, Guilherme Carvalho, Nicolas Cho]|
 | 17/11 (16:15 - 16:45) | Inteligência Artificial no mercado financeiro [Guilherme Aranha, Rafael Oncins, Gustavo Borges, Leonardo Elias]|
 | 17/11 (16:45 - 17:15) | Fighting spam with statistics [Carolina Hirschheimer, Natália Carreras, Rodrigo Griner]|
-| 17/11 (17:15 - 17:45) | Stanley: The Robot that Won the DARPA Grand Challenge [Enrico Damiani, Leonardo Malta de Abreu]|
+| 17/11 (17:15 - 17:45) | |
 | 22/11 (15:45 - 16:15) | Planning in Interplanetary Space [Gabriel Noal Oliva, Lucca Souza, Matheus Ricardo]|
 | 22/11 (16:15 - 16:45) | Predicting the potencial ability of football players in the football manager game [João Guilherme Almeida, Lais da Silva, William da Silva]|
 | 22/11 (16:45 - 17:15) | Deep Blue [Alexandre A. Edington, Giovanni dos Santos, Rafael Almada]|
 | 22/11 (17:15 - 17:45) | Reward is Enough for Social Intelligence [Gustavo Berger, Michel Moraes, Vitor Marques]|
+| 23/11 (12:00 - 12:30) | Stanley: The Robot that Won the DARPA Grand Challenge [Enrico Damiani, Leonardo Malta de Abreu]|
 | 29/11 (15:45 - 16:15) | A general reinforcement learning algorithm that masters chess, shogi, and go through self-play. and supplementary materials [Marco Piacentini]|
 | 29/11 (16:15 - 16:45) | Bias in Artificial Intelligence [Ana Barros, Isabella Fuhrken, Lila Hadba]|
 | 29/11 (16:45 - 17:15) | Impactos sócio-econômicos da IA [Ivan Barros]|
