@@ -127,4 +127,4 @@ O jogador que tiver o maior número de pontos será o campeão do torneio. Abaix
 
 ## Nota final do projeto
 
-A nota final do projeto será uma média simples entre a nota da documentação e a nota da competição.
+A nota final do projeto será uma média simples entre a nota da documentação e a nota da competição. Exceto se o jogador cometer alguma infração. Neste caso a nota final será **I**. 
